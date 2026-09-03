@@ -1,29 +1,52 @@
 /* =========================================================
    HUMAN – ESTRATEGIAS EMPRESARIALES
-   ========================================================= */
+   JAVASCRIPT
+========================================================= */
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       MENÚ MOBILE
-    ===================================================== */
+       VARIABLES
+    ====================================================== */
+
+    const header = document.getElementById("header");
 
     const menuToggle = document.getElementById("menuToggle");
+
     const nav = document.getElementById("nav");
 
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const year = document.getElementById("year");
+
+
+
+    /* =====================================================
+       AÑO AUTOMÁTICO
+    ====================================================== */
+
+    if (year) {
+
+        year.textContent = new Date().getFullYear();
+
+    }
+
+
+
+    /* =====================================================
+       MENÚ MÓVIL
+    ====================================================== */
 
     if (menuToggle && nav) {
-
 
         menuToggle.addEventListener("click", function () {
 
             nav.classList.toggle("active");
 
-
-            const icon = menuToggle.querySelector("i");
-
+            const icon =
+                menuToggle.querySelector("i");
 
             if (nav.classList.contains("active")) {
 
@@ -42,20 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* Cerrar menú al seleccionar una opción */
-
-        const links = nav.querySelectorAll("a");
-
-
-        links.forEach(function (link) {
+        navLinks.forEach(function (link) {
 
             link.addEventListener("click", function () {
 
                 nav.classList.remove("active");
 
-
-                const icon = menuToggle.querySelector("i");
-
+                const icon =
+                    menuToggle.querySelector("i");
 
                 icon.classList.remove("fa-xmark");
 
@@ -71,17 +88,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
        HEADER AL HACER SCROLL
-    ===================================================== */
-
-    const header = document.getElementById("header");
-
+    ====================================================== */
 
     function updateHeader() {
 
         if (!header) return;
 
-
-        if (window.scrollY > 50) {
+        if (window.scrollY > 30) {
 
             header.classList.add("scrolled");
 
@@ -94,53 +107,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    window.addEventListener(
-        "scroll",
-        updateHeader
-    );
-
-
     updateHeader();
 
 
-
-    /* =====================================================
-       AÑO AUTOMÁTICO
-    ===================================================== */
-
-    const year = document.getElementById("year");
-
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
-    }
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
 
 
 
     /* =====================================================
-       ANIMACIONES
-    ===================================================== */
+       ANIMACIONES REVEAL
+    ====================================================== */
 
-    const animatedElements =
-        document.querySelectorAll(
-            ".service-card, .digital-card, .process-card, .about-content, .corporate-content, .uafe-content"
-        );
-
-
-    animatedElements.forEach(function (element) {
-
-        element.classList.add("animate");
-
-    });
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
     const observer =
         new IntersectionObserver(
 
-            function (entries) {
+            function (entries, observer) {
 
                 entries.forEach(function (entry) {
 
@@ -148,9 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         entry.target.classList.add("visible");
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                        observer.unobserve(entry.target);
 
                     }
 
@@ -159,13 +146,14 @@ document.addEventListener("DOMContentLoaded", function () {
             },
 
             {
-                threshold: 0.12
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             }
 
         );
 
 
-    animatedElements.forEach(function (element) {
+    revealElements.forEach(function (element) {
 
         observer.observe(element);
 
@@ -174,48 +162,135 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SCROLL SUAVE
-    ===================================================== */
+       NAVEGACIÓN ACTIVA
+    ====================================================== */
 
-    const anchors =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+    const sections =
+        document.querySelectorAll("main section[id]");
 
 
-    anchors.forEach(function (anchor) {
+    function updateActiveNavigation() {
 
+        let currentSection = "";
+
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (
+                href === "#" + currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+
+    updateActiveNavigation();
+
+
+
+    /* =====================================================
+       CERRAR MENÚ AL CAMBIAR TAMAÑO
+    ====================================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 850) {
+
+            if (nav) {
+
+                nav.classList.remove("active");
+
+            }
+
+            if (menuToggle) {
+
+                const icon =
+                    menuToggle.querySelector("i");
+
+                if (icon) {
+
+                    icon.classList.remove("fa-xmark");
+
+                    icon.classList.add("fa-bars");
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(function (anchor) {
 
         anchor.addEventListener(
             "click",
             function (event) {
 
-
                 const targetId =
                     this.getAttribute("href");
 
-
                 if (
-                    !targetId ||
-                    targetId === "#"
+                    targetId === "#" ||
+                    !targetId
                 ) {
-
                     return;
-
                 }
 
 
                 const target =
-                    document.querySelector(
-                        targetId
-                    );
+                    document.querySelector(targetId);
 
 
-                if (!target) {
-
-                    return;
-
-                }
+                if (!target) return;
 
 
                 event.preventDefault();
@@ -229,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const targetPosition =
                     target.getBoundingClientRect().top +
-                    window.pageYOffset -
+                    window.scrollY -
                     headerHeight;
 
 
@@ -242,7 +317,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
             }
+        );
 
+    });
+
+
+
+    /* =====================================================
+       PREVENIR FLASH EN IMÁGENES
+    ====================================================== */
+
+    const images =
+        document.querySelectorAll("img");
+
+
+    images.forEach(function (image) {
+
+        image.addEventListener(
+            "load",
+            function () {
+
+                image.classList.add("loaded");
+
+            }
         );
 
     });
