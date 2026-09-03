@@ -1,24 +1,23 @@
-/* =====================================================
+/* =========================================================
    HUMAN – ESTRATEGIAS EMPRESARIALES
-   ===================================================== */
+   ========================================================= */
 
 :root {
 
-    --black: #111111;
-    --dark: #171717;
-    --dark-2: #222222;
+    --aqua: #9AFEFE;
+    --aqua-dark: #62dddd;
+    --aqua-soft: #eaffff;
+
+    --black: #101414;
+    --black-2: #171c1c;
+    --black-3: #222828;
 
     --white: #ffffff;
-    --light: #f5f5f3;
-    --light-2: #eeeeeb;
 
-    --gray: #666666;
-    --gray-light: #999999;
-
-    --gold: #c8a951;
-    --gold-dark: #a88a37;
-
-    --border: #e4e4e1;
+    --gray-100: #f6f8f8;
+    --gray-200: #e8eeee;
+    --gray-500: #667070;
+    --gray-700: #303838;
 
     --font-title: "Manrope", sans-serif;
     --font-body: "DM Sans", sans-serif;
@@ -26,13 +25,12 @@
     --container: 1180px;
 
     --transition: all .3s ease;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    RESET
-   ===================================================== */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -45,57 +43,82 @@ html {
 }
 
 body {
+
     font-family: var(--font-body);
+
     color: var(--black);
+
     background: var(--white);
+
     line-height: 1.6;
+
 }
 
 img {
-    width: 100%;
+
     display: block;
+
+    width: 100%;
+
 }
 
 a {
-    text-decoration: none;
+
     color: inherit;
+
+    text-decoration: none;
+
 }
 
 button {
+
     font-family: inherit;
+
 }
 
 .container {
-    width: min(1180px, 90%);
+
+    width: min(var(--container), 90%);
+
     margin: auto;
+
 }
 
 .section {
+
     padding: 110px 0;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-   ===================================================== */
+   ========================================================= */
 
 .header {
 
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
 
     z-index: 1000;
 
-    background: rgba(17,17,17,.96);
+    background: rgba(16,20,20,.95);
+
+    backdrop-filter: blur(12px);
 
     transition: var(--transition);
 
 }
 
 .header.scrolled {
-    box-shadow: 0 5px 30px rgba(0,0,0,.15);
+
+    box-shadow: 0 8px 35px rgba(0,0,0,.20);
+
 }
 
 .nav-container {
@@ -103,7 +126,9 @@ button {
     height: 88px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
 }
@@ -111,38 +136,23 @@ button {
 
 /* LOGO */
 
-.logo {
+.brand {
 
     display: flex;
-    flex-direction: column;
 
-    color: white;
+    align-items: center;
 
-}
-
-.logo-main {
-
-    font-family: var(--font-title);
-
-    font-size: 29px;
-
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-    line-height: 1;
+    max-width: 180px;
 
 }
 
-.logo-sub {
+.brand img {
 
-    font-size: 8px;
+    max-height: 62px;
 
-    letter-spacing: 2.2px;
+    width: auto;
 
-    margin-top: 5px;
-
-    color: var(--gold);
+    object-fit: contain;
 
 }
 
@@ -152,15 +162,16 @@ button {
 .nav {
 
     display: flex;
+
     align-items: center;
 
-    gap: 30px;
+    gap: 27px;
 
 }
 
 .nav > a {
 
-    color: rgba(255,255,255,.82);
+    color: rgba(255,255,255,.85);
 
     font-size: 14px;
 
@@ -171,37 +182,39 @@ button {
 }
 
 .nav > a:hover {
-    color: var(--gold);
+
+    color: var(--aqua);
+
 }
 
-.nav-button {
+.nav-cta {
 
     padding: 12px 20px;
 
-    border: 1px solid var(--gold);
-
-    color: var(--white) !important;
-
-}
-
-.nav-button:hover {
-
-    background: var(--gold);
+    background: var(--aqua);
 
     color: var(--black) !important;
 
+    font-weight: 700 !important;
+
+}
+
+.nav-cta:hover {
+
+    background: var(--white);
+
 }
 
 
-/* MOBILE MENU */
+/* MENU */
 
 .menu-toggle {
 
     display: none;
 
-    border: 0;
+    background: none;
 
-    background: transparent;
+    border: none;
 
     color: white;
 
@@ -212,28 +225,15 @@ button {
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-   ===================================================== */
+   ========================================================= */
 
 .hero {
 
-    min-height: 720px;
+    min-height: 760px;
 
     position: relative;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.88) 0%,
-            rgba(0,0,0,.70) 48%,
-            rgba(0,0,0,.30) 100%
-        ),
-        url("hero-human.jpg");
-
-    background-size: cover;
-
-    background-position: center;
 
     display: flex;
 
@@ -242,6 +242,29 @@ button {
     color: white;
 
     padding-top: 88px;
+
+    background-image: url("images/hero-human.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(10,15,15,.96) 0%,
+            rgba(10,15,15,.80) 48%,
+            rgba(10,15,15,.35) 100%
+        );
 
 }
 
@@ -253,21 +276,21 @@ button {
 
 }
 
-.hero-text {
+.hero-copy {
 
-    max-width: 720px;
+    max-width: 760px;
 
 }
 
-.eyebrow {
+.hero-tag {
 
     display: inline-block;
 
-    color: var(--gold);
+    color: var(--aqua);
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 3px;
 
@@ -279,9 +302,9 @@ button {
 
     font-family: var(--font-title);
 
-    font-size: clamp(45px, 6vw, 76px);
+    font-size: clamp(45px, 6vw, 78px);
 
-    line-height: 1.05;
+    line-height: 1.03;
 
     letter-spacing: -3px;
 
@@ -292,7 +315,11 @@ button {
 }
 
 .hero h1 span {
-    color: var(--gold);
+
+    display: block;
+
+    color: var(--aqua);
+
 }
 
 .hero p {
@@ -303,7 +330,7 @@ button {
 
     color: rgba(255,255,255,.82);
 
-    margin-bottom: 36px;
+    margin-bottom: 35px;
 
 }
 
@@ -315,9 +342,9 @@ button {
 
     display: flex;
 
-    gap: 14px;
-
     flex-wrap: wrap;
+
+    gap: 14px;
 
 }
 
@@ -329,13 +356,13 @@ button {
 
     justify-content: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    padding: 15px 24px;
-
-    font-weight: 700;
+    padding: 15px 23px;
 
     font-size: 14px;
+
+    font-weight: 700;
 
     transition: var(--transition);
 
@@ -345,7 +372,7 @@ button {
 
 .btn-primary {
 
-    background: var(--gold);
+    background: var(--aqua);
 
     color: var(--black);
 
@@ -353,7 +380,7 @@ button {
 
 .btn-primary:hover {
 
-    background: var(--white);
+    background: white;
 
     transform: translateY(-2px);
 
@@ -361,7 +388,7 @@ button {
 
 .btn-outline {
 
-    border-color: rgba(255,255,255,.6);
+    border-color: rgba(255,255,255,.55);
 
     color: white;
 
@@ -369,9 +396,9 @@ button {
 
 .btn-outline:hover {
 
-    border-color: var(--gold);
+    border-color: var(--aqua);
 
-    color: var(--gold);
+    color: var(--aqua);
 
 }
 
@@ -385,7 +412,7 @@ button {
 
 .btn-dark:hover {
 
-    background: var(--gold);
+    background: var(--aqua);
 
     color: var(--black);
 
@@ -404,13 +431,15 @@ button {
 
     width: 100%;
 
-    background: rgba(0,0,0,.65);
+    z-index: 3;
+
+    background: rgba(0,0,0,.60);
 
     border-top: 1px solid rgba(255,255,255,.15);
 
 }
 
-.hero-pillars {
+.hero-services {
 
     display: grid;
 
@@ -418,15 +447,15 @@ button {
 
 }
 
-.pillar {
+.hero-service {
 
     padding: 20px;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 
     gap: 12px;
 
@@ -434,38 +463,42 @@ button {
 
 }
 
-.pillar:last-child {
+.hero-service:last-child {
+
     border-right: none;
+
 }
 
-.pillar i {
-    color: var(--gold);
+.hero-service i {
+
+    color: var(--aqua);
+
 }
 
-.pillar span {
-
-    font-weight: 600;
+.hero-service span {
 
     font-size: 14px;
 
+    font-weight: 600;
+
 }
 
 
-/* =====================================================
-   TITLES
-   ===================================================== */
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
 
 .section-label {
 
-    color: var(--gold-dark);
+    display: inline-block;
+
+    color: #40bebe;
 
     font-size: 12px;
 
     font-weight: 800;
 
     letter-spacing: 3px;
-
-    display: inline-block;
 
     margin-bottom: 15px;
 
@@ -477,9 +510,9 @@ button {
 
     justify-content: space-between;
 
-    align-items: end;
+    align-items: flex-end;
 
-    gap: 40px;
+    gap: 50px;
 
     margin-bottom: 55px;
 
@@ -488,14 +521,15 @@ button {
 .section-heading h2,
 .intro h2,
 .corporate h2,
-.uafe h2,
 .about h2,
 .process h2,
-.cta h2 {
+.social h2,
+.cta h2,
+.uafe h2 {
 
     font-family: var(--font-title);
 
-    font-size: clamp(35px,4vw,52px);
+    font-size: clamp(34px,4vw,52px);
 
     line-height: 1.1;
 
@@ -506,33 +540,26 @@ button {
 .section-heading h2 strong,
 .intro h2 strong,
 .corporate h2 strong,
-.uafe h2 strong,
 .about h2 strong,
 .process h2 strong,
-.cta h2 strong {
+.social h2 strong {
 
-    color: var(--gold-dark);
+    color: #40bebe;
 
 }
 
 .section-heading > p {
 
-    max-width: 400px;
+    max-width: 420px;
 
-    color: var(--gray);
+    color: var(--gray-500);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    INTRO
-   ===================================================== */
-
-.intro {
-
-    background: var(--white);
-
-}
+   ========================================================= */
 
 .intro-grid {
 
@@ -548,146 +575,19 @@ button {
 
 .intro-text {
 
-    color: var(--gray);
+    color: var(--gray-500);
 
     font-size: 17px;
 
 }
 
 .intro-text p + p {
+
     margin-top: 20px;
-}
-
-
-/* =====================================================
-   SERVICES
-   ===================================================== */
-
-.services {
-
-    background: var(--light);
 
 }
 
-.services-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 20px;
-
-}
-
-.service-card {
-
-    background: white;
-
-    padding: 38px 32px;
-
-    position: relative;
-
-    min-height: 350px;
-
-    border: 1px solid transparent;
-
-    transition: var(--transition);
-
-}
-
-.service-card:hover {
-
-    transform: translateY(-7px);
-
-    border-color: var(--gold);
-
-    box-shadow: 0 20px 50px rgba(0,0,0,.08);
-
-}
-
-.service-card.featured {
-
-    background: var(--black);
-
-    color: white;
-
-}
-
-.service-number {
-
-    position: absolute;
-
-    top: 25px;
-
-    right: 28px;
-
-    color: #ccc;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-}
-
-.featured .service-number {
-    color: #666;
-}
-
-.service-icon {
-
-    width: 55px;
-
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: var(--light);
-
-    color: var(--gold-dark);
-
-    font-size: 22px;
-
-    margin-bottom: 25px;
-
-}
-
-.featured .service-icon {
-
-    background: #292929;
-
-    color: var(--gold);
-
-}
-
-.service-card h3 {
-
-    font-family: var(--font-title);
-
-    font-size: 21px;
-
-    line-height: 1.25;
-
-    margin-bottom: 15px;
-
-}
-
-.service-card p {
-
-    color: var(--gray);
-
-    font-size: 15px;
-
-}
-
-.featured p {
-    color: #bbb;
-}
-
-.service-card > a {
+.text-link {
 
     display: inline-flex;
 
@@ -697,52 +597,245 @@ button {
 
     margin-top: 25px;
 
+    color: var(--black);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+.text-link:hover {
+
+    color: #40bebe;
+
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+
+    background: var(--gray-100);
+
+}
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 24px;
+
+}
+
+.service-card {
+
+    background: white;
+
+    border: 1px solid var(--gray-200);
+
+    overflow: hidden;
+
+    transition: var(--transition);
+
+}
+
+.service-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.10);
+
+    border-color: var(--aqua);
+
+}
+
+.service-image {
+
+    height: 225px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.service-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+
+}
+
+.service-card:hover .service-image img {
+
+    transform: scale(1.06);
+
+}
+
+.service-number {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 15px;
+
+    padding: 7px 10px;
+
+    background: var(--aqua);
+
+    color: var(--black);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+.service-body {
+
+    padding: 30px;
+
+}
+
+.service-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: var(--aqua-soft);
+
+    color: #269999;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+.service-body h3 {
+
+    font-family: var(--font-title);
+
+    font-size: 21px;
+
+    line-height: 1.25;
+
+    margin-bottom: 13px;
+
+}
+
+.service-body p {
+
+    color: var(--gray-500);
+
+    font-size: 14px;
+
+}
+
+.service-body > a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
     font-size: 13px;
 
     font-weight: 700;
 
-    color: var(--gold-dark);
+    color: #269999;
 
 }
 
-.service-card > a:hover {
+.service-body > a:hover {
+
     gap: 15px;
+
 }
 
-.service-list {
+.mini-list {
 
     display: flex;
 
-    gap: 7px;
-
     flex-wrap: wrap;
 
-    margin-top: 20px;
+    gap: 7px;
+
+    margin-top: 18px;
 
 }
 
-.service-list span {
+.mini-list span {
 
-    font-size: 11px;
+    background: var(--gray-100);
 
-    padding: 6px 9px;
+    border: 1px solid var(--gray-200);
 
-    border: 1px solid #444;
+    padding: 5px 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: var(--gray-700);
+
+}
+
+.service-dark {
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+.service-dark .service-body p {
+
+    color: #aaa;
+
+}
+
+.service-dark .service-icon {
+
+    background: #263333;
+
+    color: var(--aqua);
+
+}
+
+.service-dark .mini-list span {
+
+    background: #252c2c;
+
+    border-color: #333;
 
     color: #ddd;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    CORPORATE
-   ===================================================== */
-
-.corporate {
-
-    background: white;
-
-}
+   ========================================================= */
 
 .corporate-grid {
 
@@ -758,7 +851,9 @@ button {
 
 .corporate-image {
 
-    height: 580px;
+    height: 570px;
+
+    position: relative;
 
     overflow: hidden;
 
@@ -772,19 +867,55 @@ button {
 
 }
 
-.corporate-content p {
+.image-label {
 
-    color: var(--gray);
+    position: absolute;
 
-    margin: 25px 0;
+    bottom: 25px;
 
-    max-width: 600px;
+    left: 25px;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    flex-direction: column;
 
 }
 
-.corporate-content ul {
+.image-label span {
 
-    list-style: none;
+    color: var(--aqua);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+
+}
+
+.image-label strong {
+
+    font-family: var(--font-title);
+
+    font-size: 20px;
+
+}
+
+.corporate-content > p {
+
+    color: var(--gray-500);
+
+    margin: 24px 0;
+
+}
+
+.corporate-list {
 
     display: grid;
 
@@ -796,7 +927,11 @@ button {
 
 }
 
-.corporate-content li {
+.corporate-list div {
+
+    display: flex;
+
+    gap: 10px;
 
     font-size: 14px;
 
@@ -804,28 +939,24 @@ button {
 
 }
 
-.corporate-content li i {
+.corporate-list i {
 
-    color: var(--gold-dark);
-
-    margin-right: 8px;
+    color: #40bebe;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    DIGITAL
-   ===================================================== */
+   ========================================================= */
 
 .digital {
 
-    background: var(--light);
+    background: var(--gray-100);
 
 }
 
 .centered {
-
-    display: flex;
 
     flex-direction: column;
 
@@ -835,9 +966,15 @@ button {
 
 }
 
+.section-heading.centered {
+
+    display: flex;
+
+}
+
 .centered > p {
 
-    max-width: 600px;
+    max-width: 650px;
 
 }
 
@@ -847,58 +984,90 @@ button {
 
     grid-template-columns: repeat(4,1fr);
 
-    border: 1px solid var(--border);
+    gap: 20px;
 
 }
 
-.digital-item {
+.digital-card {
 
-    padding: 45px 25px;
+    position: relative;
 
-    text-align: center;
+    height: 330px;
 
-    background: white;
-
-    border-right: 1px solid var(--border);
-
-    transition: var(--transition);
-
-}
-
-.digital-item:last-child {
-    border-right: none;
-}
-
-.digital-item:hover {
-
-    background: var(--black);
+    overflow: hidden;
 
     color: white;
 
 }
 
-.digital-item i {
+.digital-card img {
 
-    font-size: 35px;
+    height: 100%;
 
-    color: var(--gold-dark);
+    object-fit: cover;
 
-    margin-bottom: 20px;
+    transition: transform .5s ease;
 
 }
 
-.digital-item h3 {
+.digital-card:hover img {
+
+    transform: scale(1.06);
+
+}
+
+.digital-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        0deg,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.05)
+    );
+
+}
+
+.digital-card > div {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 25px;
+
+    right: 25px;
+
+    bottom: 25px;
+
+}
+
+.digital-card i {
+
+    color: var(--aqua);
+
+    font-size: 27px;
+
+    margin-bottom: 12px;
+
+}
+
+.digital-card h3 {
 
     font-family: var(--font-title);
 
-    font-size: 17px;
+    font-size: 18px;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    UAFE
-   ===================================================== */
+   ========================================================= */
 
 .uafe {
 
@@ -912,9 +1081,9 @@ button {
 
     display: grid;
 
-    grid-template-columns: 1.5fr .8fr;
+    grid-template-columns: 1.1fr .9fr;
 
-    gap: 100px;
+    gap: 80px;
 
     align-items: center;
 
@@ -927,7 +1096,9 @@ button {
 }
 
 .uafe h2 strong {
-    color: var(--gold);
+
+    color: var(--aqua);
+
 }
 
 .uafe-content > p {
@@ -946,13 +1117,13 @@ button {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 15px;
+    gap: 14px;
 
 }
 
 .uafe-list div {
 
-    font-size: 14px;
+    font-size: 13px;
 
     color: #ddd;
 
@@ -960,68 +1131,80 @@ button {
 
 .uafe-list i {
 
-    color: var(--gold);
+    color: var(--aqua);
 
-    margin-right: 10px;
-
-}
-
-.uafe-box {
-
-    background: #202020;
-
-    border: 1px solid #333;
-
-    padding: 50px 35px;
-
-    text-align: center;
+    margin-right: 9px;
 
 }
 
-.uafe-box > i {
+.uafe-image {
 
-    font-size: 45px;
+    height: 530px;
 
-    color: var(--gold);
+    position: relative;
 
-    margin-bottom: 25px;
+    overflow: hidden;
 
 }
 
-.uafe-box span {
+.uafe-image img {
 
-    display: block;
+    height: 100%;
 
-    font-size: 11px;
+    object-fit: cover;
+
+}
+
+.uafe-overlay {
+
+    position: absolute;
+
+    inset: auto 20px 20px 20px;
+
+    background: rgba(10,15,15,.88);
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.uafe-overlay i {
+
+    color: var(--aqua);
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+.uafe-overlay span {
+
+    color: var(--aqua);
+
+    font-size: 10px;
 
     letter-spacing: 3px;
 
-    color: var(--gold);
-
-    font-weight: 700;
+    font-weight: 800;
 
 }
 
-.uafe-box h3 {
+.uafe-overlay strong {
 
     font-family: var(--font-title);
 
-    font-size: 25px;
-
-    margin: 15px 0 30px;
+    font-size: 21px;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    ABOUT
-   ===================================================== */
-
-.about {
-
-    background: white;
-
-}
+   ========================================================= */
 
 .about-grid {
 
@@ -1037,67 +1220,29 @@ button {
 
 .about-image {
 
-    position: relative;
+    height: 550px;
+
+    overflow: hidden;
 
 }
 
 .about-image img {
 
-    height: 570px;
+    height: 100%;
 
     object-fit: cover;
 
 }
 
-.about-badge {
-
-    position: absolute;
-
-    bottom: 30px;
-
-    right: -30px;
-
-    background: var(--black);
-
-    color: white;
-
-    padding: 25px 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-}
-
-.about-badge strong {
-
-    font-family: var(--font-title);
-
-    font-size: 25px;
-
-    letter-spacing: 3px;
-
-}
-
-.about-badge span {
-
-    color: var(--gold);
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-}
-
 .about-content > p {
 
-    color: var(--gray);
+    color: var(--gray-500);
 
-    margin-top: 22px;
+    margin-top: 20px;
 
 }
 
-.about-values {
+.values {
 
     display: grid;
 
@@ -1109,25 +1254,19 @@ button {
 
 }
 
-.about-values div {
+.values i {
 
-    display: flex;
+    color: #40bebe;
 
-    flex-direction: column;
-
-}
-
-.about-values i {
-
-    color: var(--gold-dark);
-
-    font-size: 22px;
+    font-size: 23px;
 
     margin-bottom: 12px;
 
 }
 
-.about-values strong {
+.values h3 {
+
+    font-family: var(--font-title);
 
     font-size: 14px;
 
@@ -1135,22 +1274,22 @@ button {
 
 }
 
-.about-values span {
+.values p {
+
+    color: var(--gray-500);
 
     font-size: 12px;
-
-    color: var(--gray);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    PROCESS
-   ===================================================== */
+   ========================================================= */
 
 .process {
 
-    background: var(--light);
+    background: var(--gray-100);
 
 }
 
@@ -1162,13 +1301,11 @@ button {
 
     gap: 1px;
 
-    background: var(--border);
-
-    margin-top: 60px;
+    background: var(--gray-200);
 
 }
 
-.process-item {
+.process-card {
 
     background: white;
 
@@ -1178,33 +1315,33 @@ button {
 
 }
 
-.process-item > span {
+.process-number {
 
     position: absolute;
 
-    top: 20px;
+    top: 18px;
 
-    right: 20px;
-
-    color: #bbb;
+    right: 18px;
 
     font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 800;
+
+    color: #aaa;
 
 }
 
-.process-item > i {
+.process-card > i {
 
-    font-size: 30px;
+    font-size: 29px;
 
-    color: var(--gold-dark);
+    color: #40bebe;
 
     margin-bottom: 25px;
 
 }
 
-.process-item h3 {
+.process-card h3 {
 
     font-family: var(--font-title);
 
@@ -1212,39 +1349,130 @@ button {
 
 }
 
-.process-item p {
+.process-card p {
 
-    color: var(--gray);
+    color: var(--gray-500);
 
     font-size: 14px;
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.social {
+
+    text-align: center;
+
+}
+
+.social-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.social-content > p {
+
+    max-width: 600px;
+
+    color: var(--gray-500);
+
+    margin: 20px 0 30px;
+
+}
+
+.social-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+.social-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 20px;
+
+    border: 1px solid var(--gray-200);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+.social-facebook:hover {
+
+    background: #1877f2;
+
+    color: white;
+
+    border-color: #1877f2;
+
+}
+
+.social-email:hover {
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+.social-whatsapp:hover {
+
+    background: #25d366;
+
+    color: white;
+
+    border-color: #25d366;
+
+}
+
+
+/* =========================================================
    CTA
-   ===================================================== */
+   ========================================================= */
 
 .cta {
 
     padding: 110px 0;
 
+    text-align: center;
+
+    color: white;
+
     background:
 
         linear-gradient(
-            90deg,
-            rgba(0,0,0,.94),
-            rgba(0,0,0,.75)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.88)
         ),
-        url("gestion-proyectos.jpeg");
+
+        url("images/gestion-proyectos.jpg");
 
     background-size: cover;
 
     background-position: center;
-
-    color: white;
-
-    text-align: center;
 
 }
 
@@ -1259,31 +1487,37 @@ button {
 }
 
 .cta .section-label {
-    color: var(--gold);
+
+    color: var(--aqua);
+
 }
 
 .cta h2 {
 
-    max-width: 800px;
+    max-width: 850px;
 
 }
 
 .cta h2 strong {
-    color: var(--gold);
+
+    color: var(--aqua);
+
 }
 
 .cta p {
 
-    color: #ccc;
-
     max-width: 600px;
+
+    color: #ccc;
 
     margin: 25px 0 35px;
 
 }
 
 .cta-buttons {
+
     justify-content: center;
+
 }
 
 .btn-whatsapp {
@@ -1312,18 +1546,18 @@ button {
 
 .btn-light:hover {
 
-    background: var(--gold);
+    background: var(--aqua);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-   ===================================================== */
+   ========================================================= */
 
 .footer {
 
-    background: #0c0c0c;
+    background: #0b0f0f;
 
     color: white;
 
@@ -1341,45 +1575,27 @@ button {
 
 }
 
-.logo-footer {
+.footer-brand img {
 
-    display: flex;
+    max-width: 170px;
 
-    flex-direction: column;
+    max-height: 65px;
+
+    width: auto;
+
+    object-fit: contain;
 
     margin-bottom: 20px;
 
 }
 
-.logo-footer span {
-
-    font-family: var(--font-title);
-
-    font-size: 30px;
-
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-}
-
-.logo-footer small {
-
-    color: var(--gold);
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
 .footer-brand p {
-
-    color: #888;
 
     max-width: 300px;
 
-    font-size: 14px;
+    color: #777;
+
+    font-size: 13px;
 
 }
 
@@ -1395,17 +1611,17 @@ button {
 
 .footer-column h3 {
 
-    color: var(--gold);
+    color: var(--aqua);
 
     font-size: 14px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
 }
 
 .footer-column a {
 
-    color: #999;
+    color: #888;
 
     font-size: 13px;
 
@@ -1414,16 +1630,20 @@ button {
 }
 
 .footer-column a:hover {
+
     color: white;
+
 }
 
 .footer-column i {
+
     margin-right: 7px;
+
 }
 
 .footer-bottom {
 
-    border-top: 1px solid #242424;
+    border-top: 1px solid #222;
 
     padding: 25px 0;
 
@@ -1431,18 +1651,18 @@ button {
 
 .footer-bottom p {
 
-    color: #666;
-
-    font-size: 12px;
+    color: #555;
 
     text-align: center;
+
+    font-size: 11px;
 
 }
 
 
-/* =====================================================
-   WHATSAPP
-   ===================================================== */
+/* =========================================================
+   WHATSAPP FLOTANTE
+   ========================================================= */
 
 .whatsapp-float {
 
@@ -1452,15 +1672,13 @@ button {
 
     bottom: 25px;
 
-    width: 58px;
+    z-index: 9999;
 
-    height: 58px;
+    width: 62px;
+
+    height: 62px;
 
     border-radius: 50%;
-
-    background: #25d366;
-
-    color: white;
 
     display: flex;
 
@@ -1468,32 +1686,77 @@ button {
 
     justify-content: center;
 
-    font-size: 30px;
+    background: #25d366;
 
-    z-index: 999;
+    color: white;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    font-size: 32px;
 
-    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(0,0,0,.30);
+
+    transition: all .3s ease;
+
+    animation: whatsappPulse 2.2s infinite;
 
 }
 
 .whatsapp-float:hover {
 
-    transform: scale(1.08);
+    transform: scale(1.1);
+
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(37,211,102,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
 
 }
 
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
 
-@media(max-width:1000px) {
+.animate {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.animate.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1050px) {
 
     .nav {
 
-        gap: 18px;
+        gap: 17px;
 
     }
 
@@ -1503,19 +1766,16 @@ button {
 
     }
 
-    .intro-grid,
-    .corporate-grid,
-    .about-grid,
-    .uafe-grid {
+    .digital-grid {
 
-        gap: 50px;
+        grid-template-columns: repeat(2,1fr);
 
     }
 
 }
 
 
-@media(max-width:800px) {
+@media(max-width:850px) {
 
     .menu-toggle {
 
@@ -1535,53 +1795,37 @@ button {
 
         background: var(--black);
 
+        padding: 20px 5%;
+
+        display: none;
+
         flex-direction: column;
 
         align-items: stretch;
 
-        padding: 25px;
-
         gap: 0;
-
-        display: none;
 
     }
 
     .nav.active {
+
         display: flex;
+
     }
 
     .nav > a {
 
-        padding: 15px 0;
+        padding: 14px 0;
 
-        border-bottom: 1px solid #292929;
+        border-bottom: 1px solid #292f2f;
 
     }
 
-    .nav-button {
+    .nav-cta {
 
         text-align: center;
 
         margin-top: 15px;
-
-    }
-
-    .hero {
-
-        min-height: 700px;
-
-    }
-
-    .hero-pillars {
-
-        grid-template-columns: repeat(2,1fr);
-
-    }
-
-    .pillar {
-
-        border-bottom: 1px solid rgba(255,255,255,.12);
 
     }
 
@@ -1592,27 +1836,14 @@ button {
 
         grid-template-columns: 1fr;
 
-    }
-
-    .services-grid {
-
-        grid-template-columns: 1fr;
+        gap: 50px;
 
     }
 
-    .digital-grid {
+    .uafe-image {
 
-        grid-template-columns: repeat(2,1fr);
+        height: 450px;
 
-    }
-
-    .digital-item:nth-child(2) {
-        border-right: none;
-    }
-
-    .digital-item:nth-child(1),
-    .digital-item:nth-child(2) {
-        border-bottom: 1px solid var(--border);
     }
 
     .process-grid {
@@ -1630,23 +1861,37 @@ button {
 }
 
 
-@media(max-width:550px) {
+@media(max-width:600px) {
 
     .section {
+
         padding: 75px 0;
+
     }
 
     .nav-container {
+
         height: 75px;
+
     }
 
     .nav {
+
         top: 75px;
+
+    }
+
+    .brand img {
+
+        max-height: 52px;
+
+        max-width: 145px;
+
     }
 
     .hero {
 
-        min-height: 760px;
+        min-height: 730px;
 
         padding-top: 75px;
 
@@ -1661,24 +1906,20 @@ button {
     }
 
     .hero p {
+
         font-size: 16px;
-    }
-
-    .hero-bottom {
-
-        position: absolute;
 
     }
 
-    .hero-pillars {
+    .hero-services {
 
         grid-template-columns: repeat(2,1fr);
 
     }
 
-    .pillar {
+    .hero-service {
 
-        padding: 14px 8px;
+        padding: 14px 5px;
 
         font-size: 12px;
 
@@ -1692,14 +1933,7 @@ button {
 
     }
 
-    .corporate-image,
-    .about-image img {
-
-        height: 400px;
-
-    }
-
-    .corporate-content ul {
+    .services-grid {
 
         grid-template-columns: 1fr;
 
@@ -1711,25 +1945,19 @@ button {
 
     }
 
-    .digital-item {
-
-        border-right: none;
-
-        border-bottom: 1px solid var(--border);
-
-    }
-
-    .digital-item:last-child {
-        border-bottom: none;
-    }
-
-    .uafe-list {
+    .corporate-list {
 
         grid-template-columns: 1fr;
 
     }
 
-    .about-values {
+    .values {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .uafe-list {
 
         grid-template-columns: 1fr;
 
@@ -1747,15 +1975,23 @@ button {
 
     }
 
-    .about-badge {
-
-        right: 15px;
-
-    }
-
     .cta h2 {
 
         font-size: 37px;
+
+    }
+
+    .whatsapp-float {
+
+        width: 56px;
+
+        height: 56px;
+
+        right: 18px;
+
+        bottom: 18px;
+
+        font-size: 28px;
 
     }
 
