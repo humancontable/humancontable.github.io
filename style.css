@@ -195,9 +195,9 @@ button {
 
     width: auto;
 
-    height: 52px;
+    height: 64px;
 
-    max-width: 180px;
+    max-width: 210px;
 
     object-fit: contain;
 }
@@ -345,18 +345,18 @@ button {
 
     color: var(--teal);
 
-    font-size: 12px;
+    font-size: 16px;
 
     font-weight: 800;
 
-    letter-spacing: 1.8px;
+    letter-spacing: 2.2px;
 }
 
 .hero h1 {
 
     font-family: "Manrope", sans-serif;
 
-    font-size: clamp(43px, 6vw, 74px);
+    font-size: clamp(36px, 4.8vw, 60px);
 
     line-height: 1.04;
 
@@ -1860,8 +1860,8 @@ button {
     }
 
     .brand img {
-        height: 47px;
-        max-width: 165px;
+        height: 55px;
+        max-width: 190px;
     }
 
     .nav {
