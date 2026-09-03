@@ -1163,7 +1163,7 @@ ul {
 
 
     .logo {
-        width: 125px;
+        width: 145px;
     }
 
 
@@ -1363,7 +1363,7 @@ ul {
 }
 /* LOGO HUMAN */
 .logo img {
-    width: 150px !important;
+    width: 165px !important;
     height: auto !important;
     max-width: 150px !important;
     object-fit: contain;
