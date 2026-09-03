@@ -171,7 +171,7 @@ button {
 
 .nav-container {
 
-    min-height: 82px;
+    min-height: 72px;
 
     display: flex;
 
@@ -183,7 +183,9 @@ button {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .brand {
     display: flex;
@@ -195,15 +197,17 @@ button {
 
     width: auto;
 
-    height: 240px;
+    height: 70px;
 
-    max-width: 300px;
+    max-width: 220px;
 
     object-fit: contain;
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .nav {
 
@@ -232,7 +236,9 @@ button {
 }
 
 
-/* CTA NAV */
+/* =========================================================
+   CTA NAV
+   ========================================================= */
 
 .nav-cta {
 
@@ -255,7 +261,9 @@ button {
 }
 
 
-/* MENU */
+/* =========================================================
+   MENU
+   ========================================================= */
 
 .menu-toggle {
 
@@ -292,7 +300,7 @@ button {
 
     align-items: center;
 
-    padding-top: 82px;
+    padding-top: 72px;
 
     overflow: hidden;
 
@@ -388,7 +396,9 @@ button {
 }
 
 
-/* HERO BUTTONS */
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
 
 .hero-buttons {
 
@@ -451,7 +461,9 @@ button {
 }
 
 
-/* HERO BOTTOM */
+/* =========================================================
+   HERO BOTTOM
+   ========================================================= */
 
 .hero-bottom {
 
@@ -794,7 +806,9 @@ button {
 }
 
 
-/* QUITAMOS CUALQUIER ESTILO OSCURO */
+/* =========================================================
+   QUITAMOS CUALQUIER ESTILO OSCURO
+   ========================================================= */
 
 .service-dark {
     background: white;
@@ -1765,7 +1779,7 @@ button {
 
         position: absolute;
 
-        top: 82px;
+        top: 72px;
 
         left: 20px;
 
@@ -1856,23 +1870,23 @@ button {
     }
 
     .nav-container {
-        min-height: 76px;
+        min-height: 68px;
     }
 
     .brand img {
-        height: 75px;
-        max-width: 190px;
+        height: 58px;
+        max-width: 175px;
     }
 
     .nav {
-        top: 76px;
+        top: 68px;
     }
 
     .hero {
 
         min-height: 690px;
 
-        padding-top: 76px;
+        padding-top: 68px;
 
         background-position: center;
     }
