@@ -1,35 +1,40 @@
-/* =====================================================
+/* =========================================================
    HUMAN – ESTRATEGIAS EMPRESARIALES
-   JavaScript
-   ===================================================== */
+   ========================================================= */
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =================================================
+    /* =====================================================
        MENÚ MOBILE
-       ================================================= */
+    ===================================================== */
 
     const menuToggle = document.getElementById("menuToggle");
     const nav = document.getElementById("nav");
 
+
     if (menuToggle && nav) {
+
 
         menuToggle.addEventListener("click", function () {
 
             nav.classList.toggle("active");
 
+
             const icon = menuToggle.querySelector("i");
+
 
             if (nav.classList.contains("active")) {
 
                 icon.classList.remove("fa-bars");
+
                 icon.classList.add("fa-xmark");
 
             } else {
 
                 icon.classList.remove("fa-xmark");
+
                 icon.classList.add("fa-bars");
 
             }
@@ -37,19 +42,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* Cerrar menú al hacer clic en un enlace */
+        /* Cerrar menú al seleccionar una opción */
 
-        const navLinks = nav.querySelectorAll("a");
+        const links = nav.querySelectorAll("a");
 
-        navLinks.forEach(function (link) {
+
+        links.forEach(function (link) {
 
             link.addEventListener("click", function () {
 
                 nav.classList.remove("active");
 
+
                 const icon = menuToggle.querySelector("i");
 
+
                 icon.classList.remove("fa-xmark");
+
                 icon.classList.add("fa-bars");
 
             });
@@ -59,15 +68,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
+
+    /* =====================================================
        HEADER AL HACER SCROLL
-       ================================================= */
+    ===================================================== */
 
     const header = document.getElementById("header");
 
-    function checkHeader() {
+
+    function updateHeader() {
 
         if (!header) return;
+
 
         if (window.scrollY > 50) {
 
@@ -81,92 +93,145 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    window.addEventListener("scroll", checkHeader);
 
-    checkHeader();
+    window.addEventListener(
+        "scroll",
+        updateHeader
+    );
 
 
-    /* =================================================
+    updateHeader();
+
+
+
+    /* =====================================================
        AÑO AUTOMÁTICO
-       ================================================= */
+    ===================================================== */
 
     const year = document.getElementById("year");
 
+
     if (year) {
 
-        year.textContent = new Date().getFullYear();
+        year.textContent =
+            new Date().getFullYear();
 
     }
 
 
-    /* =================================================
-       ANIMACIONES AL HACER SCROLL
-       ================================================= */
 
-    const animatedElements = document.querySelectorAll(
-        ".service-card, .digital-item, .process-item, .about-content, .corporate-content"
-    );
+    /* =====================================================
+       ANIMACIONES
+    ===================================================== */
 
-
-    const observer = new IntersectionObserver(
-
-        function (entries) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.12
-        }
-
-    );
+    const animatedElements =
+        document.querySelectorAll(
+            ".service-card, .digital-card, .process-card, .about-content, .corporate-content, .uafe-content"
+        );
 
 
     animatedElements.forEach(function (element) {
 
         element.classList.add("animate");
 
+    });
+
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    animatedElements.forEach(function (element) {
+
         observer.observe(element);
 
     });
 
 
-    /* =================================================
-       SMOOTH SCROLL
-       ================================================= */
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    /* =====================================================
+       SCROLL SUAVE
+    ===================================================== */
 
-        anchor.addEventListener("click", function (event) {
+    const anchors =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
-            const targetId = this.getAttribute("href");
 
-            if (targetId === "#") return;
+    anchors.forEach(function (anchor) {
 
-            const target = document.querySelector(targetId);
 
-            if (target) {
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+
+                const targetId =
+                    this.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+
+                    return;
+
+                }
+
 
                 event.preventDefault();
 
+
                 const headerHeight =
-                    document.getElementById("header").offsetHeight;
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
 
                 const targetPosition =
                     target.getBoundingClientRect().top +
                     window.pageYOffset -
                     headerHeight;
+
 
                 window.scrollTo({
 
@@ -178,23 +243,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-        });
+        );
 
     });
 
-
-    /* =================================================
-       PREVENIR ENVÍOS / ERRORES DE LINKS VACÍOS
-       ================================================= */
-
-    document.querySelectorAll('a[href="#"]').forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            event.preventDefault();
-
-        });
-
-    });
 
 });
