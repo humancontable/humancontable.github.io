@@ -195,9 +195,9 @@ button {
 
     width: auto;
 
-    height: 280px;
+    height: 240px;
 
-    max-width: 380px;
+    max-width: 300px;
 
     object-fit: contain;
 }
