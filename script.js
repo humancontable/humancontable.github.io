@@ -9,24 +9,45 @@
    ========================================================= */
 
 const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const nav = document.getElementById("nav");
 
-if (menuToggle && mainNav) {
+if (menuToggle && nav) {
 
     menuToggle.addEventListener("click", () => {
 
-        mainNav.classList.toggle("active");
+        nav.classList.toggle("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        if (nav.classList.contains("active")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
 
     });
 
 
-    const navLinks = mainNav.querySelectorAll("a");
-
-    navLinks.forEach(link => {
+    nav.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            mainNav.classList.remove("active");
+            nav.classList.remove("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            if (icon) {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
 
         });
 
@@ -63,53 +84,16 @@ updateHeader();
 
 
 /* =========================================================
-   CURRENT YEAR
+   YEAR
    ========================================================= */
 
-const yearElement = document.getElementById("year");
+const year = document.getElementById("year");
 
-if (yearElement) {
+if (year) {
 
-    yearElement.textContent = new Date().getFullYear();
+    year.textContent = new Date().getFullYear();
 
 }
-
-
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-
-const revealElements = document.querySelectorAll(
-    ".service-card, .solution-card, .process-step, .pillar, .uafe-item"
-);
-
-const observer = new IntersectionObserver(
-    (entries, observer) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("reveal", "active");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-revealElements.forEach(element => {
-
-    observer.observe(element);
-
-});
 
 
 /* =========================================================
@@ -117,42 +101,40 @@ revealElements.forEach(element => {
    ========================================================= */
 
 const sections = document.querySelectorAll("section[id]");
-const navigationLinks = document.querySelectorAll(
-    '.main-nav a[href^="#"]'
-);
+const navLinks = document.querySelectorAll(".nav a[href^='#']");
 
-function updateActiveNavigation() {
+function updateActiveNav() {
 
-    let currentSection = "";
+    let current = "";
 
     sections.forEach(section => {
 
         const sectionTop =
-            section.offsetTop - 140;
+            section.offsetTop - 160;
 
-        const sectionHeight =
-            section.offsetHeight;
+        const sectionBottom =
+            sectionTop + section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
+            window.scrollY < sectionBottom
         ) {
 
-            currentSection = section.getAttribute("id");
+            current = section.id;
 
         }
 
     });
 
 
-    navigationLinks.forEach(link => {
+    navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-        const target =
-            link.getAttribute("href");
-
-        if (target === "#" + currentSection) {
+        if (
+            link.getAttribute("href") ===
+            "#" + current
+        ) {
 
             link.classList.add("active");
 
@@ -162,19 +144,16 @@ function updateActiveNavigation() {
 
 }
 
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation
-);
+window.addEventListener("scroll", updateActiveNav);
 
-updateActiveNavigation();
+updateActiveNav();
 
 
 /* =========================================================
    SMOOTH SCROLL
    ========================================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll("a[href^='#']").forEach(link => {
 
     link.addEventListener("click", function (event) {
 
@@ -204,8 +183,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             target.offsetTop - headerHeight;
 
         window.scrollTo({
+
             top: targetPosition,
+
             behavior: "smooth"
+
         });
 
     });
@@ -221,10 +203,20 @@ document.addEventListener("keydown", event => {
 
     if (
         event.key === "Escape" &&
-        mainNav
+        nav
     ) {
 
-        mainNav.classList.remove("active");
+        nav.classList.remove("active");
+
+        const icon =
+            menuToggle?.querySelector("i");
+
+        if (icon) {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
 
     }
 
