@@ -105,23 +105,50 @@
             </a>
 
 
-            <nav class="nav">
+            <nav class="main-nav">
 
-                <a href="#inicio">Inicio</a>
+                <ul>
 
-                <a href="#nosotros">Nosotros</a>
+                    <li>
+                        <a href="#inicio">Inicio</a>
+                    </li>
 
-                <a href="#servicios">Servicios</a>
+                    <li>
+                        <a href="#nosotros">Nosotros</a>
+                    </li>
 
-                <a href="#sas">Crea tu SAS</a>
+                    <li>
+                        <a href="#servicios">Servicios</a>
+                    </li>
 
-                <a href="#uafe">UAFE</a>
+                    <li>
+                        <a href="#sas">Crea tu SAS</a>
+                    </li>
 
-                <a href="#redes">Redes Sociales</a>
+                    <li>
+                        <a href="#uafe">UAFE</a>
+                    </li>
 
-                <a href="#contacto">Contacto</a>
+                    <li>
+                        <a href="#redes">Redes Sociales</a>
+                    </li>
+
+                    <li>
+                        <a href="#contacto">Contacto</a>
+                    </li>
+
+                </ul>
 
             </nav>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Abrir menú">
+
+                ☰
+
+            </button>
 
         </div>
 
@@ -137,11 +164,13 @@
 
         <section id="inicio" class="hero">
 
+            <div class="hero-overlay"></div>
+
             <div class="container hero-content">
 
                 <div class="hero-text">
 
-                    <span class="hero-label">
+                    <span class="hero-tag">
                         ESTRATEGIAS EMPRESARIALES
                     </span>
 
@@ -170,7 +199,7 @@
 
                         <a
                             href="#servicios"
-                            class="btn btn-secondary">
+                            class="btn btn-outline">
 
                             Ver servicios
 
@@ -190,30 +219,21 @@
              NOSOTROS
         ========================== -->
 
-        <section id="nosotros" class="section">
+        <section id="nosotros" class="section about-section">
 
             <div class="container">
 
-                <div class="section-header">
+                <div class="about-grid">
 
-                    <span class="section-label">
-                        NOSOTROS
-                    </span>
+                    <div class="about-content">
 
-                    <h2>
-                        Tu empresa necesita más que un servicio.
-                    </h2>
+                        <span class="section-tag">
+                            NOSOTROS
+                        </span>
 
-                    <p>
-                        Necesita estrategia, organización y acompañamiento.
-                    </p>
-
-                </div>
-
-
-                <div class="about-content">
-
-                    <div class="about-text">
+                        <h2>
+                            Tu empresa necesita más que un servicio.
+                        </h2>
 
                         <p>
                             En <strong>HUMAN – Estrategias Empresariales</strong>
@@ -238,6 +258,25 @@
 
                     </div>
 
+
+                    <div class="about-box">
+
+                        <div class="about-number">
+                            HUMAN
+                        </div>
+
+                        <h3>
+                            Estrategia para crecer.
+                        </h3>
+
+                        <p>
+                            Organizamos, fortalecemos y acompañamos
+                            a tu empresa para que puedas tomar mejores
+                            decisiones y avanzar con mayor seguridad.
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -256,7 +295,7 @@
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         NUESTROS SERVICIOS
                     </span>
 
@@ -277,53 +316,37 @@
 
                     <article class="service-card">
 
-                        <span class="service-number">01</span>
+                        <div class="service-image">
 
-                        <h3>
-                            Gestión Administrativa
-                        </h3>
+                            <img
+                                src="images/administracion.jpg"
+                                alt="Gestión administrativa empresarial">
 
-                        <p>
-                            Organización y optimización de procesos
-                            administrativos para mejorar el funcionamiento
-                            de tu empresa.
-                        </p>
+                        </div>
 
-                    </article>
+                        <div class="service-content">
 
+                            <span class="service-number">01</span>
 
+                            <h3>
+                                Gestión Administrativa
+                            </h3>
 
-                    <article class="service-card">
+                            <p>
+                                Organización y optimización de procesos
+                                administrativos para mejorar el funcionamiento
+                                de tu empresa.
+                            </p>
 
-                        <span class="service-number">02</span>
+                            <ul>
 
-                        <h3>
-                            Gestión Contable
-                        </h3>
+                                <li>Organización administrativa</li>
+                                <li>Optimización de procesos</li>
+                                <li>Control documental</li>
 
-                        <p>
-                            Servicios de contabilidad y control financiero
-                            para mantener información confiable y útil
-                            para la toma de decisiones.
-                        </p>
+                            </ul>
 
-                    </article>
-
-
-
-                    <article class="service-card">
-
-                        <span class="service-number">03</span>
-
-                        <h3>
-                            Gestión Tributaria
-                        </h3>
-
-                        <p>
-                            Asesoría y gestión de obligaciones tributarias
-                            para ayudar a tu empresa a cumplir correctamente
-                            con sus responsabilidades.
-                        </p>
+                        </div>
 
                     </article>
 
@@ -331,51 +354,37 @@
 
                     <article class="service-card">
 
-                        <span class="service-number">04</span>
+                        <div class="service-image">
 
-                        <h3>
-                            Gestión Laboral
-                        </h3>
+                            <img
+                                src="images/contabilidad.jpg"
+                                alt="Servicios de contabilidad empresarial">
 
-                        <p>
-                            Apoyo en procesos laborales, obligaciones
-                            y documentación relacionada con la gestión
-                            de trabajadores.
-                        </p>
+                        </div>
 
-                    </article>
+                        <div class="service-content">
 
+                            <span class="service-number">02</span>
 
+                            <h3>
+                                Gestión Contable
+                            </h3>
 
-                    <article class="service-card">
+                            <p>
+                                Servicios de contabilidad y control financiero
+                                para mantener información confiable y útil
+                                para la toma de decisiones.
+                            </p>
 
-                        <span class="service-number">05</span>
+                            <ul>
 
-                        <h3>
-                            Gestión Empresarial
-                        </h3>
+                                <li>Contabilidad</li>
+                                <li>Estados financieros</li>
+                                <li>Control financiero</li>
 
-                        <p>
-                            Asesoría para organizar, estructurar y fortalecer
-                            la gestión integral de tu empresa.
-                        </p>
+                            </ul>
 
-                    </article>
-
-
-
-                    <article class="service-card">
-
-                        <span class="service-number">06</span>
-
-                        <h3>
-                            Gestión de Proyectos
-                        </h3>
-
-                        <p>
-                            Planificación, seguimiento y control de proyectos
-                            para mejorar resultados, tiempos y recursos.
-                        </p>
+                        </div>
 
                     </article>
 
@@ -383,16 +392,37 @@
 
                     <article class="service-card">
 
-                        <span class="service-number">07</span>
+                        <div class="service-image">
 
-                        <h3>
-                            Servicios Digitales
-                        </h3>
+                            <img
+                                src="images/tributacion.jpg"
+                                alt="Asesoría tributaria en Ecuador">
 
-                        <p>
-                            Soluciones digitales para modernizar procesos
-                            administrativos y empresariales.
-                        </p>
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">03</span>
+
+                            <h3>
+                                Gestión Tributaria
+                            </h3>
+
+                            <p>
+                                Asesoría y gestión de obligaciones tributarias
+                                para ayudar a tu empresa a cumplir correctamente
+                                con sus responsabilidades.
+                            </p>
+
+                            <ul>
+
+                                <li>Declaraciones</li>
+                                <li>Obligaciones tributarias</li>
+                                <li>Asesoría tributaria</li>
+
+                            </ul>
+
+                        </div>
 
                     </article>
 
@@ -400,17 +430,37 @@
 
                     <article class="service-card">
 
-                        <span class="service-number">08</span>
+                        <div class="service-image">
 
-                        <h3>
-                            Cumplimiento y Normativa UAFE
-                        </h3>
+                            <img
+                                src="images/laboral.jpg"
+                                alt="Gestión laboral empresarial">
 
-                        <p>
-                            Servicios de apoyo para sujetos obligados y
-                            cumplimiento de obligaciones relacionadas con
-                            la normativa UAFE.
-                        </p>
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">04</span>
+
+                            <h3>
+                                Gestión Laboral
+                            </h3>
+
+                            <p>
+                                Apoyo en procesos laborales, obligaciones
+                                y documentación relacionada con la gestión
+                                de trabajadores.
+                            </p>
+
+                            <ul>
+
+                                <li>Gestión laboral</li>
+                                <li>Documentación</li>
+                                <li>Obligaciones laborales</li>
+
+                            </ul>
+
+                        </div>
 
                     </article>
 
@@ -418,17 +468,186 @@
 
                     <article class="service-card">
 
-                        <span class="service-number">09</span>
+                        <div class="service-image">
 
-                        <h3>
-                            Capacitación y Asesoría
-                        </h3>
+                            <img
+                                src="images/empresarial.jpg"
+                                alt="Gestión empresarial">
 
-                        <p>
-                            Capacitación y acompañamiento para mejorar
-                            conocimientos, procesos y capacidades
-                            empresariales.
-                        </p>
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">05</span>
+
+                            <h3>
+                                Gestión Empresarial
+                            </h3>
+
+                            <p>
+                                Asesoría para organizar, estructurar y fortalecer
+                                la gestión integral de tu empresa.
+                            </p>
+
+                            <ul>
+
+                                <li>Organización empresarial</li>
+                                <li>Planificación</li>
+                                <li>Desarrollo empresarial</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="images/proyectos.jpg"
+                                alt="Gestión de proyectos">
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">06</span>
+
+                            <h3>
+                                Gestión de Proyectos
+                            </h3>
+
+                            <p>
+                                Planificación, seguimiento y control de proyectos
+                                para mejorar resultados, tiempos y recursos.
+                            </p>
+
+                            <ul>
+
+                                <li>Planificación</li>
+                                <li>Seguimiento</li>
+                                <li>Control de proyectos</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="images/digital.jpg"
+                                alt="Servicios digitales empresariales">
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">07</span>
+
+                            <h3>
+                                Servicios Digitales
+                            </h3>
+
+                            <p>
+                                Soluciones digitales para modernizar procesos
+                                administrativos y empresariales.
+                            </p>
+
+                            <ul>
+
+                                <li>Soluciones digitales</li>
+                                <li>Automatización</li>
+                                <li>Herramientas empresariales</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="images/uafe.jpg"
+                                alt="Cumplimiento UAFE Ecuador">
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">08</span>
+
+                            <h3>
+                                Cumplimiento y Normativa UAFE
+                            </h3>
+
+                            <p>
+                                Servicios de apoyo para sujetos obligados y
+                                cumplimiento de obligaciones relacionadas con
+                                la normativa UAFE.
+                            </p>
+
+                            <ul>
+
+                                <li>Manuales</li>
+                                <li>Matriz de riesgos</li>
+                                <li>Reportes UAFE</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="images/capacitacion.jpg"
+                                alt="Capacitación empresarial">
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-number">09</span>
+
+                            <h3>
+                                Capacitación y Asesoría
+                            </h3>
+
+                            <p>
+                                Capacitación y acompañamiento para mejorar
+                                conocimientos, procesos y capacidades
+                                empresariales.
+                            </p>
+
+                            <ul>
+
+                                <li>Capacitación</li>
+                                <li>Asesoría</li>
+                                <li>Formación empresarial</li>
+
+                            </ul>
+
+                        </div>
 
                     </article>
 
@@ -451,7 +670,7 @@
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         CONSTITUCIÓN DE EMPRESAS
                     </span>
 
@@ -466,9 +685,18 @@
                 </div>
 
 
-                <div class="sas-content">
+                <div class="sas-grid">
 
-                    <div class="sas-text">
+                    <div class="sas-image">
+
+                        <img
+                            src="images/sas.jpg"
+                            alt="Constitución de SAS en Ecuador">
+
+                    </div>
+
+
+                    <div class="sas-content">
 
                         <h3>
                             Constituye tu empresa de manera organizada.
@@ -480,169 +708,180 @@
                             Simplificadas en Ecuador.
                         </p>
 
-                    </div>
+                        <div class="sas-highlight">
+                            CONSTITUYE · ORGANIZA · CRECE
+                        </div>
 
 
-                    <div class="sas-steps">
+                        <div class="steps">
 
 
-                        <div class="step">
+                            <div class="step">
 
-                            <span>01</span>
+                                <span>01</span>
 
-                            <div>
+                                <div>
 
-                                <h3>
-                                    Reserva de nombre
-                                </h3>
+                                    <h4>
+                                        Reserva de nombre
+                                    </h4>
 
-                                <p>
-                                    Verificación y reserva de la denominación
-                                    de la empresa.
-                                </p>
+                                    <p>
+                                        Verificación y reserva de la denominación
+                                        de la empresa.
+                                    </p>
+
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <div class="step">
 
-                        <div class="step">
+                                <span>02</span>
 
-                            <span>02</span>
+                                <div>
 
-                            <div>
+                                    <h4>
+                                        Firma electrónica
+                                    </h4>
 
-                                <h3>
-                                    Firma electrónica
-                                </h3>
+                                    <p>
+                                        Gestión de los requisitos necesarios
+                                        para la firma de documentos.
+                                    </p>
 
-                                <p>
-                                    Gestión de los requisitos necesarios
-                                    para la firma de documentos.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="step">
-
-                            <span>03</span>
-
-                            <div>
-
-                                <h3>
-                                    Registro en línea
-                                </h3>
-
-                                <p>
-                                    Presentación de la información
-                                    correspondiente.
-                                </p>
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <div class="step">
 
-                        <div class="step">
+                                <span>03</span>
 
-                            <span>04</span>
+                                <div>
 
-                            <div>
+                                    <h4>
+                                        Registro en línea
+                                    </h4>
 
-                                <h3>
-                                    Documento constitutivo
-                                </h3>
+                                    <p>
+                                        Presentación de la información
+                                        correspondiente.
+                                    </p>
 
-                                <p>
-                                    Preparación de la documentación
-                                    correspondiente a la constitución.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="step">
-
-                            <span>05</span>
-
-                            <div>
-
-                                <h3>
-                                    Representante legal
-                                </h3>
-
-                                <p>
-                                    Formalización de la representación
-                                    legal de la sociedad.
-                                </p>
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <div class="step">
 
-                        <div class="step">
+                                <span>04</span>
 
-                            <span>06</span>
+                                <div>
 
-                            <div>
+                                    <h4>
+                                        Documento constitutivo
+                                    </h4>
 
-                                <h3>
-                                    RUC y permisos
-                                </h3>
+                                    <p>
+                                        Preparación de la documentación
+                                        correspondiente a la constitución.
+                                    </p>
 
-                                <p>
-                                    Apoyo en los procesos posteriores
-                                    necesarios para iniciar operaciones.
-                                </p>
+                                </div>
 
                             </div>
 
+
+
+                            <div class="step">
+
+                                <span>05</span>
+
+                                <div>
+
+                                    <h4>
+                                        Representante legal
+                                    </h4>
+
+                                    <p>
+                                        Formalización de la representación
+                                        legal de la sociedad.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="step">
+
+                                <span>06</span>
+
+                                <div>
+
+                                    <h4>
+                                        RUC y permisos
+                                    </h4>
+
+                                    <p>
+                                        Apoyo en los procesos posteriores
+                                        necesarios para iniciar operaciones.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
                         </div>
 
 
-                    </div>
+                        <div class="sas-advantages">
 
-                </div>
+                            <h3>
+                                Ventajas de una SAS
+                            </h3>
 
+                            <ul>
 
-                <div class="advantages">
+                                <li>
+                                    Proceso simplificado de constitución.
+                                </li>
 
-                    <h3>
-                        Ventajas de una SAS
-                    </h3>
+                                <li>
+                                    Flexibilidad para estructurar la empresa.
+                                </li>
 
-                    <div class="advantages-grid">
+                                <li>
+                                    Separación entre patrimonio personal y empresarial.
+                                </li>
 
-                        <div>
-                            <strong>01</strong>
-                            <p>Proceso simplificado de constitución.</p>
+                                <li>
+                                    Alternativa adecuada para emprendedores y empresas.
+                                </li>
+
+                            </ul>
+
                         </div>
 
-                        <div>
-                            <strong>02</strong>
-                            <p>Flexibilidad para estructurar la empresa.</p>
-                        </div>
 
-                        <div>
-                            <strong>03</strong>
-                            <p>Separación entre patrimonio personal y empresarial.</p>
-                        </div>
+                        <a
+                            href="https://wa.me/593982856207?text=Hola%20HUMAN,%20quiero%20información%20sobre%20la%20constitución%20de%20una%20SAS."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary">
 
-                        <div>
-                            <strong>04</strong>
-                            <p>Alternativa adecuada para emprendedores y empresas.</p>
-                        </div>
+                            Crear mi SAS
+
+                        </a>
 
                     </div>
 
@@ -664,7 +903,7 @@
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         CUMPLIMIENTO
                     </span>
 
@@ -683,94 +922,144 @@
                 <div class="uafe-grid">
 
 
-                    <article class="uafe-card">
+                    <div class="uafe-image">
 
-                        <h3>
-                            Cumplimiento oficial
-                        </h3>
+                        <img
+                            src="images/uafe.jpg"
+                            alt="Cumplimiento de normativa UAFE">
 
-                        <p>
-                            Apoyo en la organización y cumplimiento de
-                            obligaciones establecidas por la normativa.
-                        </p>
-
-                    </article>
+                    </div>
 
 
-
-                    <article class="uafe-card">
-
-                        <h3>
-                            Informe anual
-                        </h3>
-
-                        <p>
-                            Preparación y apoyo en la gestión de información
-                            requerida para los procesos correspondientes.
-                        </p>
-
-                    </article>
+                    <div>
 
 
+                        <div class="uafe-item">
 
-                    <article class="uafe-card">
+                            <span>01</span>
 
-                        <h3>
-                            Plan anual de actividades
-                        </h3>
+                            <div>
 
-                        <p>
-                            Elaboración y organización del plan de actividades
-                            relacionado con el cumplimiento.
-                        </p>
+                                <h3>
+                                    Cumplimiento oficial
+                                </h3>
 
-                    </article>
+                                <p>
+                                    Apoyo en la organización y cumplimiento
+                                    de obligaciones establecidas por la normativa.
+                                </p>
+
+                            </div>
+
+                        </div>
 
 
 
-                    <article class="uafe-card">
+                        <div class="uafe-item">
 
-                        <h3>
-                            Manuales y matriz de riesgos
-                        </h3>
+                            <span>02</span>
 
-                        <p>
-                            Desarrollo y organización de documentación,
-                            procedimientos y herramientas de gestión de riesgos.
-                        </p>
+                            <div>
 
-                    </article>
+                                <h3>
+                                    Informe anual
+                                </h3>
 
+                                <p>
+                                    Preparación y apoyo en la gestión de información
+                                    requerida para los procesos correspondientes.
+                                </p>
 
+                            </div>
 
-                    <article class="uafe-card">
-
-                        <h3>
-                            Reportes UAFE
-                        </h3>
-
-                        <p>
-                            Apoyo en la preparación y organización de
-                            información para los reportes correspondientes.
-                        </p>
-
-                    </article>
+                        </div>
 
 
 
-                    <article class="uafe-card">
+                        <div class="uafe-item">
 
-                        <h3>
-                            Capacitación
-                        </h3>
+                            <span>03</span>
 
-                        <p>
-                            Capacitación y asesoría relacionada con procesos
-                            y obligaciones de cumplimiento.
-                        </p>
+                            <div>
 
-                    </article>
+                                <h3>
+                                    Plan anual de actividades
+                                </h3>
 
+                                <p>
+                                    Elaboración y organización del plan de actividades
+                                    relacionado con el cumplimiento.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="uafe-item">
+
+                            <span>04</span>
+
+                            <div>
+
+                                <h3>
+                                    Manuales y matriz de riesgos
+                                </h3>
+
+                                <p>
+                                    Desarrollo y organización de documentación,
+                                    procedimientos y herramientas de gestión de riesgos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="uafe-item">
+
+                            <span>05</span>
+
+                            <div>
+
+                                <h3>
+                                    Reportes UAFE
+                                </h3>
+
+                                <p>
+                                    Apoyo en la preparación y organización de
+                                    información para los reportes correspondientes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="uafe-item">
+
+                            <span>06</span>
+
+                            <div>
+
+                                <h3>
+                                    Capacitación
+                                </h3>
+
+                                <p>
+                                    Capacitación y asesoría relacionada con procesos
+                                    y obligaciones de cumplimiento.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
                 </div>
 
@@ -790,7 +1079,7 @@
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         GESTIÓN DIGITAL
                     </span>
 
@@ -808,29 +1097,58 @@
 
                 <div class="platforms-grid">
 
-                    <div class="platform">
+                    <div class="platform-card">
+
                         <strong>SRI</strong>
-                        <span>Servicio de Rentas Internas</span>
+
+                        <span>
+                            Servicio de Rentas Internas
+                        </span>
+
                     </div>
 
-                    <div class="platform">
+
+                    <div class="platform-card">
+
                         <strong>SERCOP</strong>
-                        <span>Contratación Pública</span>
+
+                        <span>
+                            Contratación Pública
+                        </span>
+
                     </div>
 
-                    <div class="platform">
+
+                    <div class="platform-card">
+
                         <strong>SUPERCIAS</strong>
-                        <span>Superintendencia de Compañías</span>
+
+                        <span>
+                            Superintendencia de Compañías
+                        </span>
+
                     </div>
 
-                    <div class="platform">
+
+                    <div class="platform-card">
+
                         <strong>IESS</strong>
-                        <span>Seguridad Social</span>
+
+                        <span>
+                            Seguridad Social
+                        </span>
+
                     </div>
 
-                    <div class="platform">
+
+                    <div class="platform-card">
+
                         <strong>SUT</strong>
-                        <span>Ministerio del Trabajo</span>
+
+                        <span>
+                            Ministerio del Trabajo
+                        </span>
+
                     </div>
 
                 </div>
@@ -845,13 +1163,13 @@
              PRODUCTOS DIGITALES
         ========================== -->
 
-        <section class="section digital-section">
+        <section class="section digital-products-section">
 
             <div class="container">
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         SOLUCIONES DIGITALES
                     </span>
 
@@ -862,49 +1180,73 @@
                 </div>
 
 
-                <div class="digital-grid">
+                <div class="products-grid">
 
 
-                    <article class="digital-card">
+                    <article class="product-card">
 
-                        <h3>
-                            Facturación Electrónica
-                        </h3>
+                        <img
+                            src="images/facturacion.jpg"
+                            alt="Facturación electrónica">
 
-                        <p>
-                            Soluciones para gestionar la facturación
-                            electrónica de tu negocio.
-                        </p>
+                        <div>
 
-                    </article>
+                            <h3>
+                                Facturación Electrónica
+                            </h3>
 
+                            <p>
+                                Soluciones para gestionar la facturación
+                                electrónica de tu negocio.
+                            </p>
 
-
-                    <article class="digital-card">
-
-                        <h3>
-                            Firmas Electrónicas
-                        </h3>
-
-                        <p>
-                            Soluciones para facilitar procesos que
-                            requieren firma electrónica.
-                        </p>
+                        </div>
 
                     </article>
 
 
 
-                    <article class="digital-card">
+                    <article class="product-card">
 
-                        <h3>
-                            Sistema Contable
-                        </h3>
+                        <img
+                            src="images/firma.jpg"
+                            alt="Firmas electrónicas">
 
-                        <p>
-                            Herramientas para organizar y gestionar
-                            la información contable de tu empresa.
-                        </p>
+                        <div>
+
+                            <h3>
+                                Firmas Electrónicas
+                            </h3>
+
+                            <p>
+                                Soluciones para facilitar procesos que
+                                requieren firma electrónica.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="product-card">
+
+                        <img
+                            src="images/contable.jpg"
+                            alt="Sistema contable">
+
+                        <div>
+
+                            <h3>
+                                Sistema Contable
+                            </h3>
+
+                            <p>
+                                Herramientas para organizar y gestionar
+                                la información contable de tu empresa.
+                            </p>
+
+                        </div>
 
                     </article>
 
@@ -918,117 +1260,113 @@
 
 
         <!-- =========================
-             SERVICIOS CORPORATIVOS
+             CORPORATIVO
         ========================== -->
 
         <section class="section corporate-section">
 
             <div class="container">
 
-                <div class="section-header">
-
-                    <span class="section-label">
-                        SERVICIOS CORPORATIVOS
-                    </span>
-
-                    <h2>
-                        Fortalecemos tu estructura empresarial
-                    </h2>
-
-                </div>
-
-
                 <div class="corporate-grid">
 
 
-                    <article>
+                    <div class="corporate-image">
 
-                        <h3>
-                            Constitución de S.A.S.
-                        </h3>
+                        <img
+                            src="images/corporativo.jpg"
+                            alt="Servicios corporativos empresariales">
 
-                        <p>
-                            Acompañamiento para crear y formalizar
-                            tu empresa.
-                        </p>
-
-                    </article>
+                    </div>
 
 
+                    <div class="corporate-content">
 
-                    <article>
+                        <span class="section-tag">
+                            SERVICIOS CORPORATIVOS
+                        </span>
 
-                        <h3>
-                            Registro de Marca
-                        </h3>
+                        <h2>
+                            Fortalecemos tu estructura empresarial
+                        </h2>
 
                         <p>
-                            Apoyo en el proceso de protección
-                            de tu identidad empresarial.
+                            Soluciones estratégicas para organizar,
+                            proteger y desarrollar tu empresa.
                         </p>
 
-                    </article>
+
+                        <div class="corporate-list">
 
 
+                            <div>
 
-                    <article>
+                                <span>01</span>
 
-                        <h3>
-                            Planificación Estratégica
-                        </h3>
+                                <strong>
+                                    Constitución de S.A.S.
+                                </strong>
 
-                        <p>
-                            Definición de objetivos, estrategias
-                            y acciones para tu empresa.
-                        </p>
-
-                    </article>
+                            </div>
 
 
+                            <div>
 
-                    <article>
+                                <span>02</span>
 
-                        <h3>
-                            Gestión de Proyectos
-                        </h3>
+                                <strong>
+                                    Registro de Marca
+                                </strong>
 
-                        <p>
-                            Planificación y seguimiento de proyectos
-                            empresariales.
-                        </p>
-
-                    </article>
+                            </div>
 
 
+                            <div>
 
-                    <article>
+                                <span>03</span>
 
-                        <h3>
-                            Desarrollo Empresarial
-                        </h3>
+                                <strong>
+                                    Planificación Estratégica
+                                </strong>
 
-                        <p>
-                            Estrategias para fortalecer y desarrollar
-                            tu negocio.
-                        </p>
-
-                    </article>
+                            </div>
 
 
+                            <div>
 
-                    <article>
+                                <span>04</span>
 
-                        <h3>
-                            Consultoría de Negocios
-                        </h3>
+                                <strong>
+                                    Gestión de Proyectos
+                                </strong>
 
-                        <p>
-                            Análisis y asesoría para apoyar la toma
-                            de decisiones empresariales.
-                        </p>
+                            </div>
 
-                    </article>
 
+                            <div>
+
+                                <span>05</span>
+
+                                <strong>
+                                    Desarrollo Empresarial
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>06</span>
+
+                                <strong>
+                                    Consultoría de Negocios
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -1046,31 +1384,96 @@
 
             <div class="container">
 
-                <div class="training-content">
+                <div class="training-grid">
 
-                    <span class="section-label">
-                        CAPACITACIÓN
-                    </span>
 
-                    <h2>
-                        Desarrolla las capacidades de tu equipo
-                    </h2>
+                    <div class="training-content">
 
-                    <p>
-                        Capacitaciones y asesorías orientadas a fortalecer
-                        los conocimientos necesarios para una mejor gestión
-                        empresarial.
-                    </p>
+                        <span class="section-tag">
+                            CAPACITACIÓN
+                        </span>
 
-                    <a
-                        href="https://wa.me/593982856207?text=Hola%20HUMAN,%20quiero%20información%20sobre%20las%20capacitaciones."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary">
+                        <h2>
+                            Desarrolla las capacidades de tu equipo
+                        </h2>
 
-                        Solicitar capacitación
+                        <p>
+                            Capacitaciones y asesorías orientadas a fortalecer
+                            los conocimientos necesarios para una mejor gestión
+                            empresarial.
+                        </p>
 
-                    </a>
+
+                        <div class="training-items">
+
+                            <div>
+
+                                <span>✓</span>
+
+                                Gestión empresarial
+
+                            </div>
+
+
+                            <div>
+
+                                <span>✓</span>
+
+                                Contabilidad y tributación
+
+                            </div>
+
+
+                            <div>
+
+                                <span>✓</span>
+
+                                Gestión de proyectos
+
+                            </div>
+
+
+                            <div>
+
+                                <span>✓</span>
+
+                                Herramientas digitales
+
+                            </div>
+
+
+                            <div>
+
+                                <span>✓</span>
+
+                                Cumplimiento y normativa
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="https://wa.me/593982856207?text=Hola%20HUMAN,%20quiero%20información%20sobre%20las%20capacitaciones."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary">
+
+                            Solicitar capacitación
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="training-image">
+
+                        <img
+                            src="images/capacitacion.jpg"
+                            alt="Capacitación empresarial">
+
+                    </div>
+
 
                 </div>
 
@@ -1090,7 +1493,7 @@
 
                 <div class="section-header">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         CONECTA CON HUMAN
                     </span>
 
@@ -1105,22 +1508,24 @@
                 </div>
 
 
-                <div class="social-grid">
+                <div class="social-buttons">
 
 
                     <a
                         href="https://wa.me/593982856207"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="social-card">
+                        class="social-btn whatsapp">
 
-                        <h3>
-                            WhatsApp
-                        </h3>
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
 
-                        <p>
-                            Escríbenos directamente.
-                        </p>
+                            <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.53 0 .22 5.31.22 11.84c0 2.09.55 4.13 1.6 5.93L.12 24l6.37-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.17-1.23-6.15-3.39-8.43ZM12.07 21.7h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.83 9.83 0 0 1-1.51-5.2C2.17 6.39 6.61 1.95 12.07 1.95c2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 0 1 2.9 7.03c0 5.46-4.44 9.81-9.92 9.81Zm5.39-7.37c-.29-.15-1.71-.84-1.98-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.32-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.71-.7 1.95-1.37.24-.67.24-1.24.17-1.37-.07-.12-.27-.2-.57-.35Z"/>
+
+                        </svg>
+
+                        WhatsApp
 
                     </a>
 
@@ -1130,15 +1535,17 @@
                         href="https://www.facebook.com/profile.php?id=61591538923651"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="social-card">
+                        class="social-btn facebook">
 
-                        <h3>
-                            Facebook
-                        </h3>
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
 
-                        <p>
-                            Visita nuestra página.
-                        </p>
+                            <path d="M14 8h3V4h-3c-2.76 0-5 2.24-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1Z"/>
+
+                        </svg>
+
+                        Facebook
 
                     </a>
 
@@ -1161,7 +1568,7 @@
 
                 <div class="cta-content">
 
-                    <span class="section-label">
+                    <span class="section-tag">
                         HABLEMOS DE TU EMPRESA
                     </span>
 
@@ -1178,7 +1585,7 @@
                         href="https://wa.me/593982856207?text=Hola%20HUMAN,%20quiero%20una%20asesoría%20para%20mi%20empresa."
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn btn-primary">
+                        class="btn btn-light">
 
                         Hablar con HUMAN
 
@@ -1200,59 +1607,123 @@
 
             <div class="container">
 
-                <div class="section-header">
-
-                    <span class="section-label">
-                        CONTACTO
-                    </span>
-
-                    <h2>
-                        Estamos para ayudarte
-                    </h2>
-
-                </div>
-
-
                 <div class="contact-grid">
 
 
-                    <div class="contact-item">
+                    <div class="contact-content">
 
-                        <span>
-                            TELÉFONO
+                        <span class="section-tag">
+                            CONTACTO
                         </span>
 
-                        <a href="tel:+593982856207">
-                            098 285 6207
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="contact-item">
-
-                        <span>
-                            EMAIL
-                        </span>
-
-                        <a href="mailto:human.contable@gmail.com">
-                            human.contable@gmail.com
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="contact-item">
-
-                        <span>
-                            UBICACIÓN
-                        </span>
+                        <h2>
+                            Estamos para ayudarte
+                        </h2>
 
                         <p>
-                            Ecuador
+                            Comunícate con nosotros para conocer nuestros
+                            servicios y encontrar la solución adecuada
+                            para tu empresa.
                         </p>
+
+
+                        <div class="contact-info">
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    ☎
+                                </div>
+
+                                <div>
+
+                                    <small>
+                                        TELÉFONO
+                                    </small>
+
+                                    <strong>
+                                        <a href="tel:+593982856207">
+                                            098 285 6207
+                                        </a>
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    ✉
+                                </div>
+
+                                <div>
+
+                                    <small>
+                                        EMAIL
+                                    </small>
+
+                                    <strong>
+                                        <a href="mailto:human.contable@gmail.com">
+                                            human.contable@gmail.com
+                                        </a>
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    ●
+                                </div>
+
+                                <div>
+
+                                    <small>
+                                        UBICACIÓN
+                                    </small>
+
+                                    <strong>
+                                        Ecuador
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-card">
+
+                        <img
+                            src="images/logo.png"
+                            alt="HUMAN – Estrategias Empresariales">
+
+                        <h3>
+                            HUMAN
+                        </h3>
+
+                        <p>
+                            Estrategias Empresariales
+                        </p>
+
+                        <div class="contact-card-line"></div>
+
+                        <span>
+                            Contabilidad · Tributación · Gestión Empresarial
+                        </span>
 
                     </div>
 
@@ -1277,20 +1748,59 @@
 
             <div class="footer-content">
 
-                <img
-                    src="images/logo.png"
-                    alt="HUMAN – Estrategias Empresariales"
-                    class="footer-logo">
+                <div>
+
+                    <strong>
+                        HUMAN – Estrategias Empresariales
+                    </strong>
+
+                    <p>
+                        Contabilidad · Tributación · Gestión Empresarial ·
+                        UAFE · Proyectos · Soluciones Digitales
+                    </p>
+
+                </div>
 
 
-                <p>
-                    HUMAN – Estrategias Empresariales
-                </p>
+                <div class="footer-social">
 
-                <p>
-                    Contabilidad · Tributación · Gestión Empresarial ·
-                    UAFE · Proyectos · Soluciones Digitales
-                </p>
+                    <a
+                        href="https://wa.me/593982856207"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp">
+
+                        <svg
+                            viewBox="0 0 24 24">
+
+                            <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.53 0 .22 5.31.22 11.84c0 2.09.55 4.13 1.6 5.93L.12 24l6.37-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.17-1.23-6.15-3.39-8.43Z"/>
+
+                        </svg>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61591538923651"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook">
+
+                        <svg
+                            viewBox="0 0 24 24">
+
+                            <path d="M14 8h3V4h-3c-2.76 0-5 2.24-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1Z"/>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
 
                 <p>
                     © 2026 HUMAN – Estrategias Empresariales.
@@ -1316,9 +1826,13 @@
         class="whatsapp-float"
         aria-label="Contactar a HUMAN por WhatsApp">
 
-        <span>
-            WhatsApp
-        </span>
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+
+            <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.53 0 .22 5.31.22 11.84c0 2.09.55 4.13 1.6 5.93L.12 24l6.37-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.17-1.23-6.15-3.39-8.43ZM12.07 21.7h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.83 9.83 0 0 1-1.51-5.2C2.17 6.39 6.61 1.95 12.07 1.95c2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 0 1 2.9 7.03c0 5.46-4.44 9.81-9.92 9.81Zm5.39-7.37c-.29-.15-1.71-.84-1.98-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.32-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.71-.7 1.95-1.37.24-.67.24-1.24.17-1.37-.07-.12-.27-.2-.57-.35Z"/>
+
+        </svg>
 
     </a>
 
