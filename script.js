@@ -1,52 +1,56 @@
-/* =========================================
-   HUMAN - JAVASCRIPT
-========================================= */
+/* =====================================================
+   HUMAN – ESTRATEGIAS EMPRESARIALES
+   JavaScript
+   ===================================================== */
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================
-       AÑO AUTOMÁTICO
-    ===================================== */
-
-    const year = document.getElementById("year");
-
-    if (year) {
-
-        year.textContent = new Date().getFullYear();
-
-    }
-
-
-    /* =====================================
+    /* =================================================
        MENÚ MOBILE
-    ===================================== */
+       ================================================= */
 
-    const menuButton = document.getElementById("menuButton");
-
+    const menuToggle = document.getElementById("menuToggle");
     const nav = document.getElementById("nav");
 
+    if (menuToggle && nav) {
 
-    if (menuButton && nav) {
-
-        menuButton.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function () {
 
             nav.classList.toggle("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            if (nav.classList.contains("active")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
 
         });
 
 
-        /* Cerrar menú al hacer clic */
+        /* Cerrar menú al hacer clic en un enlace */
 
         const navLinks = nav.querySelectorAll("a");
-
 
         navLinks.forEach(function (link) {
 
             link.addEventListener("click", function () {
 
                 nav.classList.remove("active");
+
+                const icon = menuToggle.querySelector("i");
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
 
             });
 
@@ -55,17 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================
+    /* =================================================
        HEADER AL HACER SCROLL
-    ===================================== */
+       ================================================= */
 
     const header = document.getElementById("header");
 
-
-    window.addEventListener("scroll", function () {
+    function checkHeader() {
 
         if (!header) return;
-
 
         if (window.scrollY > 50) {
 
@@ -77,15 +79,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-    });
+    }
+
+    window.addEventListener("scroll", checkHeader);
+
+    checkHeader();
 
 
-    /* =====================================
-       ANIMACIÓN AL ENTRAR EN PANTALLA
-    ===================================== */
+    /* =================================================
+       AÑO AUTOMÁTICO
+       ================================================= */
+
+    const year = document.getElementById("year");
+
+    if (year) {
+
+        year.textContent = new Date().getFullYear();
+
+    }
+
+
+    /* =================================================
+       ANIMACIONES AL HACER SCROLL
+       ================================================= */
 
     const animatedElements = document.querySelectorAll(
-        ".service-card, .process-item, .about-content, .about-image"
+        ".service-card, .digital-item, .process-item, .about-content, .corporate-content"
     );
 
 
@@ -123,41 +142,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================
-       SCROLL SUAVE
-    ===================================== */
+    /* =================================================
+       SMOOTH SCROLL
+       ================================================= */
 
-    const links = document.querySelectorAll('a[href^="#"]');
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 
-
-    links.forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
+        anchor.addEventListener("click", function (event) {
 
             const targetId = this.getAttribute("href");
 
-
             if (targetId === "#") return;
 
-
             const target = document.querySelector(targetId);
-
 
             if (target) {
 
                 event.preventDefault();
 
-
-                const headerHeight = header
-                    ? header.offsetHeight
-                    : 0;
-
+                const headerHeight =
+                    document.getElementById("header").offsetHeight;
 
                 const targetPosition =
                     target.getBoundingClientRect().top +
                     window.pageYOffset -
                     headerHeight;
-
 
                 window.scrollTo({
 
@@ -173,5 +182,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+
+    /* =================================================
+       PREVENIR ENVÍOS / ERRORES DE LINKS VACÍOS
+       ================================================= */
+
+    document.querySelectorAll('a[href="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+        });
+
+    });
 
 });
