@@ -1,53 +1,40 @@
 ```css
 /* =========================================================
    HUMAN — ESTRATEGIAS EMPRESARIALES
-   PREMIUM CORPORATE DESIGN SYSTEM
+   PREMIUM CORPORATE WEBSITE
    ========================================================= */
 
 
 /* =========================================================
-   01. DESIGN SYSTEM
+   01. VARIABLES
    ========================================================= */
 
 :root {
 
-    /* BRAND */
-    --brand: #008c95;
-    --brand-dark: #006c73;
-    --brand-light: #eaf6f6;
+    --green: #008c95;
+    --green-dark: #006d74;
+    --green-soft: #edf7f7;
 
-    /* COLORS */
-    --ink: #172126;
-    --ink-soft: #34434a;
-    --muted: #68777d;
+    --black: #10191d;
+    --dark: #172428;
+    --text: #334248;
+    --muted: #718087;
+
     --white: #ffffff;
+    --off-white: #f7f9f9;
+    --line: #e4e9ea;
 
-    --surface: #f5f7f7;
-    --surface-soft: #fafbfb;
-    --border: #e4e9ea;
+    --max-width: 1240px;
 
-    /* LAYOUT */
-    --container: 1240px;
-    --section-space: 120px;
+    --section-padding: 125px;
 
-    /* RADIUS */
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
+    --radius: 18px;
 
-    /* SHADOWS */
-    --shadow-sm:
-        0 5px 20px rgba(20, 40, 45, .06);
+    --shadow:
+        0 20px 60px rgba(16, 35, 40, .09);
 
-    --shadow-md:
-        0 15px 45px rgba(20, 40, 45, .09);
-
-    --shadow-lg:
-        0 25px 70px rgba(20, 40, 45, .13);
-
-    /* TRANSITIONS */
     --transition:
-        280ms cubic-bezier(.2, .8, .2, 1);
+        .35s cubic-bezier(.2,.8,.2,1);
 }
 
 
@@ -65,22 +52,24 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 85px;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    color: var(--ink);
+    color: var(--text);
     background: var(--white);
+
     line-height: 1.7;
+
     overflow-x: hidden;
+
     -webkit-font-smoothing: antialiased;
 }
 
 img {
     display: block;
     width: 100%;
-    max-width: 100%;
 }
 
 a {
@@ -89,7 +78,7 @@ a {
 }
 
 button {
-    font: inherit;
+    font-family: inherit;
 }
 
 ul {
@@ -97,84 +86,175 @@ ul {
 }
 
 ::selection {
-    background: var(--brand);
+    background: var(--green);
     color: white;
 }
 
 
 /* =========================================================
-   03. GLOBAL LAYOUT
+   03. GLOBAL
    ========================================================= */
 
 .container {
-    width: min(90%, var(--container));
-    margin-inline: auto;
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
 }
 
-.section {
-    padding: var(--section-space) 0;
-}
-
-.section-header {
-    width: min(100%, 760px);
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-.section-tag {
+.section-kicker {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
+    gap: 12px;
 
-    color: var(--brand);
+    color: var(--green);
 
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: .18em;
+
+    letter-spacing: .2em;
     text-transform: uppercase;
 }
 
-.section-tag::before {
+.section-kicker::before {
     content: "";
-    width: 28px;
+
+    width: 30px;
     height: 2px;
-    background: var(--brand);
+
+    background: var(--green);
 }
 
-.section-header h2 {
-    margin-bottom: 20px;
+.section-kicker.light {
+    color: rgba(255,255,255,.75);
+}
 
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
+.section-kicker.light::before {
+    background: rgba(255,255,255,.65);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 22px;
+
+    color: var(--green);
+
+    font-size: 13px;
     font-weight: 700;
+
+    transition: var(--transition);
 }
 
-.section-header p {
-    max-width: 650px;
-    margin-inline: auto;
+.text-link span {
+    font-size: 20px;
+    line-height: 0;
 
-    color: var(--muted);
-    font-size: 16px;
+    transition: var(--transition);
+}
+
+.text-link:hover span {
+    transform: translateX(6px);
 }
 
 
 /* =========================================================
-   04. HEADER
+   04. BUTTONS
+   ========================================================= */
+
+.btn {
+    min-height: 54px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 28px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: .02em;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(0,140,149,.20);
+}
+
+.btn-primary:hover {
+    background: var(--green-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0,140,149,.28);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.55);
+
+    color: white;
+
+    background: rgba(255,255,255,.04);
+
+    backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--black);
+}
+
+.btn-light {
+    background: white;
+    color: var(--green);
+
+    box-shadow: var(--shadow);
+}
+
+.btn-light:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: var(--black);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: var(--green);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   05. HEADER
    ========================================================= */
 
 .header {
     position: fixed;
-    inset: 0 0 auto;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
     z-index: 1000;
 
-    background: rgba(255, 255, 255, .94);
+    background: rgba(255,255,255,.94);
 
-    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    border-bottom: 1px solid rgba(20,40,45,.06);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .nav-container {
@@ -202,17 +282,20 @@ ul {
 .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 34px;
+
+    gap: 36px;
 }
 
 .main-nav a {
     position: relative;
 
+    display: block;
+
     padding: 30px 0;
 
-    color: var(--ink-soft);
+    color: var(--dark);
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
 
     transition: var(--transition);
@@ -222,19 +305,20 @@ ul {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: 22px;
 
     width: 0;
     height: 2px;
 
-    background: var(--brand);
+    background: var(--green);
 
     transition: var(--transition);
 }
 
 .main-nav a:hover {
-    color: var(--brand);
+    color: var(--green);
 }
 
 .main-nav a:hover::after {
@@ -247,88 +331,102 @@ ul {
     width: 42px;
     height: 42px;
 
+    align-items: center;
+    justify-content: center;
+
     border: 0;
+
     background: transparent;
 
-    color: var(--ink);
+    color: var(--dark);
 
-    font-size: 27px;
+    font-size: 28px;
+
     cursor: pointer;
 }
 
 
 /* =========================================================
-   05. HERO
+   06. HERO
    ========================================================= */
 
 .hero {
     position: relative;
 
-    min-height: 760px;
+    min-height: 820px;
+
     margin-top: 82px;
 
     display: flex;
     align-items: center;
 
-    background-image: url("images/hero-human.jpg");
-    background-size: cover;
-    background-position: center;
+    background:
+        url("images/hero-human.jpg")
+        center center / cover no-repeat;
 }
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(7, 24, 28, .84) 0%,
-            rgba(7, 24, 28, .63) 45%,
-            rgba(7, 24, 28, .18) 100%
+            rgba(8,25,29,.88) 0%,
+            rgba(8,25,29,.68) 45%,
+            rgba(8,25,29,.15) 100%
         );
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
 }
 
 .hero-text {
-    max-width: 760px;
+    max-width: 780px;
 }
 
-.hero-tag {
+.hero-eyebrow {
     display: inline-flex;
 
-    margin-bottom: 25px;
-    padding: 9px 16px;
+    margin-bottom: 28px;
 
-    border: 1px solid rgba(255,255,255,.4);
+    padding: 9px 17px;
+
+    border: 1px solid rgba(255,255,255,.35);
+
     border-radius: 50px;
 
     color: white;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: .18em;
-    text-transform: uppercase;
 
-    background: rgba(255,255,255,.07);
+    letter-spacing: .2em;
+
+    background: rgba(255,255,255,.06);
+
     backdrop-filter: blur(8px);
 }
 
 .hero h1 {
-    max-width: 800px;
+    max-width: 850px;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
     color: white;
 
-    font-size: clamp(46px, 6vw, 76px);
-    line-height: 1.02;
-    letter-spacing: -.045em;
+    font-size: clamp(48px, 6.5vw, 78px);
+
+    line-height: 1.01;
+
+    letter-spacing: -.055em;
+
     font-weight: 700;
 }
 
@@ -337,599 +435,462 @@ ul {
 
     margin-bottom: 38px;
 
-    color: rgba(255,255,255,.88);
+    color: rgba(255,255,255,.87);
 
-    font-size: 18px;
-    line-height: 1.75;
+    font-size: 17px;
+
+    line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
+
     gap: 14px;
 }
 
-
-/* =========================================================
-   06. BUTTONS
-   ========================================================= */
-
-.btn {
-    min-height: 52px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 26px;
-
-    border-radius: 8px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background: var(--brand);
-    color: white;
-
-    box-shadow:
-        0 10px 25px rgba(0,140,149,.25);
-}
-
-.btn-primary:hover {
-    background: var(--brand-dark);
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 30px rgba(0,140,149,.30);
-}
-
-.btn-outline {
-    border: 1px solid rgba(255,255,255,.65);
-    background: rgba(255,255,255,.04);
-    color: white;
-
-    backdrop-filter: blur(8px);
-}
-
-.btn-outline:hover {
-    background: white;
-    color: var(--ink);
-}
-
-.btn-light {
-    background: white;
-    color: var(--brand);
-
-    box-shadow: var(--shadow-md);
-}
-
-.btn-light:hover {
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    background: var(--ink);
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: var(--brand);
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   07. NOSOTROS
-   ========================================================= */
-
-.about-section {
-    background: white;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
-
-    gap: 100px;
-
-    align-items: center;
-}
-
-.about-content {
-    max-width: 720px;
-}
-
-.about-content h2 {
-    margin-bottom: 25px;
-
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
-}
-
-.about-content p {
-    margin-bottom: 20px;
-
-    color: var(--muted);
-    font-size: 16px;
-}
-
-.about-box {
-    position: relative;
-
-    padding: 55px;
-
-    background: var(--surface);
-
-    border-radius: var(--radius-lg);
-
-    box-shadow: var(--shadow-sm);
-}
-
-.about-box::before {
-    content: "";
-
+.hero-scroll {
     position: absolute;
-    top: 0;
-    left: 0;
 
-    width: 5px;
-    height: 100%;
+    right: 6%;
+    bottom: 35px;
 
-    border-radius: 10px 0 0 10px;
+    z-index: 3;
 
-    background: var(--brand);
-}
-
-.about-number {
-    margin-bottom: 18px;
-
-    color: var(--brand);
-
-    font-size: 54px;
-    line-height: 1;
-    font-weight: 800;
-}
-
-.about-box h3 {
-    margin-bottom: 15px;
-
-    font-size: 25px;
-    line-height: 1.25;
-}
-
-.about-box p {
-    color: var(--muted);
-}
-
-.text-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    margin-top: 18px;
-
-    color: var(--brand);
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.text-link::after {
-    content: "→";
-    transition: var(--transition);
-}
-
-.text-link:hover::after {
-    transform: translateX(5px);
-}
-
-
-/* =========================================================
-   08. SERVICIOS
-   ========================================================= */
-
-.services-section {
-    background: var(--surface);
-}
-
-.services-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 28px;
-}
-
-.service-card {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 
-    overflow: hidden;
+    color: rgba(255,255,255,.65);
 
-    background: white;
+    font-size: 9px;
+    font-weight: 700;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-
-    box-shadow: var(--shadow-sm);
-
-    transition: var(--transition);
+    letter-spacing: .16em;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(0,140,149,.2);
-
-    box-shadow: var(--shadow-lg);
-}
-
-.service-image {
-    position: relative;
-
-    height: 245px;
-
-    overflow: hidden;
-}
-
-.service-image::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.22),
-        transparent 50%
-    );
-}
-
-.service-image img {
-    height: 100%;
-    object-fit: cover;
-
-    transition: transform .7s ease;
-}
-
-.service-card:hover .service-image img {
-    transform: scale(1.06);
-}
-
-.service-content {
-    flex: 1;
-
-    padding: 32px;
-}
-
-.service-number {
+.hero-scroll i {
     display: block;
 
-    margin-bottom: 14px;
+    width: 45px;
+    height: 1px;
 
-    color: var(--brand);
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .15em;
-}
-
-.service-content h3 {
-    margin-bottom: 14px;
-
-    font-size: 22px;
-    line-height: 1.2;
-}
-
-.service-content p {
-    margin-bottom: 22px;
-
-    color: var(--muted);
-
-    font-size: 14px;
-}
-
-.service-content ul {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.service-content li {
-    position: relative;
-
-    padding-left: 22px;
-
-    color: var(--ink-soft);
-
-    font-size: 13px;
-}
-
-.service-content li::before {
-    content: "✓";
-
-    position: absolute;
-    left: 0;
-
-    color: var(--brand);
-
-    font-weight: 800;
+    background: rgba(255,255,255,.55);
 }
 
 
 /* =========================================================
-   09. SAS
+   07. INTRO
    ========================================================= */
 
-.sas-section {
+.intro-section {
+    padding: var(--section-padding) 0;
+
     background: white;
 }
 
-.sas-grid {
+.intro-layout {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, .9fr)
-        minmax(0, 1.1fr);
+    grid-template-columns: 220px minmax(0, 800px);
 
     gap: 90px;
 
-    align-items: center;
+    justify-content: center;
 }
 
-.sas-image {
-    height: 610px;
+.intro-label {
+    padding-top: 8px;
+}
+
+.intro-label span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--green);
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.intro-label p {
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.intro-content h2 {
+    max-width: 750px;
+
+    margin-bottom: 28px;
+
+    color: var(--black);
+
+    font-size: clamp(38px, 5vw, 62px);
+
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
+}
+
+.intro-content p {
+    max-width: 720px;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.intro-content .intro-lead {
+    color: var(--text);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   08. SERVICES
+   ========================================================= */
+
+.services-section {
+    padding: var(--section-padding) 0;
+
+    background: var(--off-white);
+}
+
+.section-intro {
+    max-width: 760px;
+
+    margin-bottom: 80px;
+}
+
+.section-intro.centered {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.section-intro.centered .section-kicker {
+    justify-content: center;
+}
+
+.section-intro h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    color: var(--black);
+
+    font-size: clamp(40px, 5vw, 60px);
+
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
+}
+
+.section-intro p {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 70px;
+}
+
+.service-feature {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, .85fr);
+
+    min-height: 560px;
+
+    background: white;
+
+    border-radius: var(--radius);
 
     overflow: hidden;
 
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 45px rgba(20,40,45,.06);
 }
 
-.sas-image img {
+.service-feature.reverse {
+    grid-template-columns:
+        minmax(0, .85fr)
+        minmax(0, 1.15fr);
+}
+
+.service-feature.reverse .service-image {
+    order: 2;
+}
+
+.service-feature.reverse .service-info {
+    order: 1;
+}
+
+.service-image {
+    min-height: 560px;
+
+    overflow: hidden;
+}
+
+.service-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+
+    transition: transform .8s ease;
 }
 
-.sas-content h3 {
-    margin-bottom: 18px;
-
-    font-size: clamp(30px, 3vw, 42px);
-    line-height: 1.12;
-    letter-spacing: -.03em;
+.service-feature:hover .service-image img {
+    transform: scale(1.04);
 }
 
-.sas-content > p {
-    margin-bottom: 30px;
+.service-info {
+    padding: 70px;
 
-    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.sas-highlight {
-    margin-bottom: 32px;
-    padding: 24px 26px;
-
-    background: var(--brand-light);
-
-    border-left: 4px solid var(--brand);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-}
-
-.sas-highlight strong {
+.service-index {
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 18px;
 
-    color: var(--ink);
+    color: var(--green);
 
-    font-size: 15px;
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .16em;
 }
 
-.sas-highlight p {
+.service-info h3 {
+    max-width: 420px;
+
+    margin-bottom: 20px;
+
+    color: var(--black);
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    line-height: 1.05;
+
+    letter-spacing: -.04em;
+}
+
+.service-info p {
+    max-width: 470px;
+
+    margin-bottom: 28px;
+
     color: var(--muted);
+
     font-size: 14px;
 }
 
-.steps {
+.service-info ul {
     display: flex;
     flex-direction: column;
-    gap: 24px;
 
-    margin-bottom: 35px;
+    gap: 10px;
 }
 
-.step {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
+.service-info li {
+    position: relative;
+
+    padding-left: 22px;
+
+    color: var(--text);
+
+    font-size: 13px;
 }
 
-.step > span {
-    flex: 0 0 40px;
+.service-info li::before {
+    content: "";
 
-    width: 40px;
-    height: 40px;
+    position: absolute;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 0;
+    top: 10px;
+
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
-    background: var(--brand);
-    color: white;
-
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.step h4 {
-    margin-bottom: 4px;
-
-    font-size: 15px;
-}
-
-.step p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-.sas-advantages {
-    margin-bottom: 32px;
-}
-
-.sas-advantages h3 {
-    margin-bottom: 18px;
-
-    font-size: 21px;
-}
-
-.sas-advantages ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 11px;
-}
-
-.sas-advantages li {
-    position: relative;
-
-    padding-left: 20px;
-
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-.sas-advantages li::before {
-    content: "✓";
-
-    position: absolute;
-    left: 0;
-
-    color: var(--brand);
-
-    font-weight: 800;
+    background: var(--green);
 }
 
 
 /* =========================================================
-   10. UAFE
+   09. PROJECTS
    ========================================================= */
 
-.uafe-section {
-    background: var(--surface);
-}
-
-.uafe-grid {
+.project-section {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1.1fr .9fr;
 
-    gap: 24px;
+    min-height: 700px;
 }
 
-.uafe-item {
-    padding: 36px;
-
-    background: white;
-
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-
-    transition: var(--transition);
+.project-image {
+    min-height: 650px;
 }
 
-.uafe-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+.project-image img {
+    height: 100%;
+
+    object-fit: cover;
 }
 
-.uafe-item > span {
-    display: block;
-
-    margin-bottom: 15px;
-
-    color: var(--brand);
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .15em;
-}
-
-.uafe-item h3 {
-    margin-bottom: 12px;
-
-    font-size: 20px;
-}
-
-.uafe-item p {
-    color: var(--muted);
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   11. PLATAFORMAS
-   ========================================================= */
-
-.platforms-section {
-    background: white;
-}
-
-.platforms-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 24px;
-}
-
-.platform-card {
-    min-height: 210px;
-
-    padding: 36px;
+.project-content {
+    padding: 100px 9%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background: var(--surface);
+    background: var(--black);
 
-    border: 1px solid transparent;
-    border-radius: var(--radius-md);
-
-    transition: var(--transition);
+    color: white;
 }
 
-.platform-card:hover {
+.project-content h2 {
+    max-width: 520px;
+
+    margin: 24px 0;
+
+    font-size: clamp(42px, 5vw, 62px);
+
+    line-height: 1.02;
+
+    letter-spacing: -.045em;
+}
+
+.project-content p {
+    max-width: 500px;
+
+    margin-bottom: 28px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 15px;
+}
+
+.project-content .btn {
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   10. DIGITAL
+   ========================================================= */
+
+.digital-section {
+    padding: var(--section-padding) 0;
+
     background: white;
-
-    border-color: var(--border);
-
-    transform: translateY(-5px);
-
-    box-shadow: var(--shadow-md);
 }
 
-.platform-card h3 {
-    margin-bottom: 12px;
+.digital-header {
+    display: grid;
 
-    font-size: 20px;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 65px;
 }
 
-.platform-card p {
+.digital-header h2 {
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    color: var(--black);
+
+    font-size: clamp(40px, 5vw, 60px);
+
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
+}
+
+.digital-header > p {
+    max-width: 480px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.digital-main {
+    display: grid;
+
+    grid-template-columns: 1.3fr .7fr;
+
+    min-height: 560px;
+
+    background: var(--off-white);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+}
+
+.digital-image {
+    min-height: 560px;
+}
+
+.digital-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.digital-copy {
+    padding: 65px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.digital-copy h3 {
+    margin-bottom: 20px;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    line-height: 1.12;
+
+    letter-spacing: -.03em;
+}
+
+.digital-copy p {
     color: var(--muted);
 
     font-size: 14px;
@@ -937,100 +898,253 @@ ul {
 
 
 /* =========================================================
-   12. PRODUCTOS DIGITALES
+   11. SOLUTIONS
    ========================================================= */
 
-.digital-products-section {
-    background: var(--surface);
+.solutions-section {
+    padding: var(--section-padding) 0;
+
+    background: var(--off-white);
 }
 
-.products-grid {
+.solution-stack {
     display: grid;
 
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 28px;
+    gap: 25px;
 }
 
-.product-card {
-    overflow: hidden;
-
+.solution-card {
     background: white;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
 
-    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(20,40,45,.06);
 
     transition: var(--transition);
 }
 
-.product-card:hover {
-    transform: translateY(-7px);
+.solution-card:hover {
+    transform: translateY(-8px);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
-.product-card img {
-    height: 250px;
+.solution-card-image {
+    height: 280px;
+
+    overflow: hidden;
+}
+
+.solution-card-image img {
+    height: 100%;
 
     object-fit: cover;
 
     transition: transform .7s ease;
 }
 
-.product-card:hover img {
+.solution-card:hover img {
     transform: scale(1.05);
 }
 
-.product-card-content {
-    padding: 30px;
+.solution-card-content {
+    padding: 32px;
 }
 
-.product-card h3 {
-    margin-bottom: 10px;
+.solution-card-content > span {
+    display: block;
 
-    font-size: 20px;
+    margin-bottom: 13px;
+
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: .15em;
 }
 
-.product-card p {
-    margin-bottom: 18px;
+.solution-card-content h3 {
+    margin-bottom: 12px;
 
+    color: var(--black);
+
+    font-size: 21px;
+
+    line-height: 1.2;
+}
+
+.solution-card-content p {
     color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   13. SOLUCIONES CORPORATIVAS
+   12. UAFE
    ========================================================= */
 
-.corporate-section {
+.uafe-section {
+    display: grid;
+
+    grid-template-columns: 1.05fr .95fr;
+
+    min-height: 720px;
+}
+
+.uafe-image {
+    min-height: 650px;
+}
+
+.uafe-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.uafe-content {
+    padding: 100px 9%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: var(--green-soft);
+}
+
+.uafe-content h2 {
+    max-width: 580px;
+
+    margin: 24px 0;
+
+    color: var(--black);
+
+    font-size: clamp(40px, 5vw, 58px);
+
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
+}
+
+.uafe-content > p {
+    max-width: 540px;
+
+    margin-bottom: 35px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.uafe-points {
+    display: flex;
+
+    gap: 35px;
+
+    margin-bottom: 38px;
+}
+
+.uafe-points div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.uafe-points strong {
+    color: var(--green);
+
+    font-size: 18px;
+}
+
+.uafe-points span {
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   13. SAS
+   ========================================================= */
+
+.sas-section {
+    padding: var(--section-padding) 0;
+
     background: white;
 }
 
-.corporate-grid {
+.sas-layout {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, .95fr)
-        minmax(0, 1.05fr);
+    grid-template-columns: .85fr 1.15fr;
 
     gap: 90px;
 
     align-items: center;
 }
 
-.corporate-image {
-    height: 570px;
+.sas-content h2 {
+    max-width: 600px;
+
+    margin: 22px 0;
+
+    color: var(--black);
+
+    font-size: clamp(40px, 5vw, 58px);
+
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
+}
+
+.sas-content p {
+    max-width: 530px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.sas-image {
+    height: 580px;
 
     overflow: hidden;
 
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
+}
+
+.sas-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   14. CORPORATE
+   ========================================================= */
+
+.corporate-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 720px;
+}
+
+.corporate-image {
+    min-height: 650px;
 }
 
 .corporate-image img {
@@ -1039,72 +1153,61 @@ ul {
     object-fit: cover;
 }
 
-.corporate-content h2 {
-    margin-bottom: 22px;
+.corporate-content {
+    padding: 100px 10%;
 
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
-}
-
-.corporate-content > p {
-    margin-bottom: 30px;
-
-    color: var(--muted);
-}
-
-.corporate-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+
+    background: var(--black);
+
+    color: white;
 }
 
-.corporate-list > div {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+.corporate-content h2 {
+    max-width: 650px;
 
-    padding: 18px 20px;
+    margin: 24px 0;
 
-    background: var(--surface);
+    color: white;
 
-    border-radius: var(--radius-sm);
+    font-size: clamp(40px, 5vw, 58px);
 
-    transition: var(--transition);
+    line-height: 1.04;
+
+    letter-spacing: -.045em;
 }
 
-.corporate-list > div:hover {
-    background: var(--brand-light);
-    transform: translateX(5px);
+.corporate-content p {
+    max-width: 560px;
+
+    margin-bottom: 32px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 15px;
 }
 
-.corporate-list span {
-    color: var(--brand);
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .1em;
-}
-
-.corporate-list strong {
-    font-size: 14px;
+.corporate-content .btn {
+    align-self: flex-start;
 }
 
 
 /* =========================================================
-   14. CAPACITACIÓN
+   15. TRAINING
    ========================================================= */
 
 .training-section {
-    background: var(--surface);
+    padding: var(--section-padding) 0;
+
+    background: var(--off-white);
 }
 
-.training-grid {
+.training-layout {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, .85fr)
-        minmax(0, 1.15fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 90px;
 
@@ -1112,38 +1215,50 @@ ul {
 }
 
 .training-image {
-    height: 520px;
+    height: 580px;
 
     overflow: hidden;
 
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .training-image img {
     height: 100%;
+
     object-fit: cover;
 }
 
 .training-content h2 {
-    margin-bottom: 22px;
+    max-width: 650px;
 
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
+    margin: 24px 0;
+
+    color: var(--black);
+
+    font-size: clamp(38px, 4.5vw, 56px);
+
+    line-height: 1.05;
+
+    letter-spacing: -.04em;
 }
 
-.training-content p {
-    margin-bottom: 22px;
+.training-content > p {
+    max-width: 580px;
+
+    margin-bottom: 25px;
 
     color: var(--muted);
+
+    font-size: 15px;
 }
 
 .training-content ul {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+
+    gap: 10px;
 
     margin-bottom: 30px;
 }
@@ -1153,93 +1268,86 @@ ul {
 
     padding-left: 22px;
 
-    color: var(--ink-soft);
+    color: var(--text);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .training-content li::before {
     content: "✓";
 
     position: absolute;
+
     left: 0;
 
-    color: var(--brand);
+    color: var(--green);
 
     font-weight: 800;
 }
 
 
 /* =========================================================
-   15. REDES
+   16. PHILOSOPHY
    ========================================================= */
 
-.social-section {
+.philosophy-section {
+    padding: 150px 0;
+
     background: white;
+
+    text-align: center;
 }
 
-.social-buttons {
-    display: flex;
+.philosophy {
+    max-width: 950px;
+
+    margin: 0 auto;
+}
+
+.philosophy .section-kicker {
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px;
 }
 
-.social-btn {
-    min-width: 180px;
+.philosophy h2 {
+    margin: 28px auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 11px;
+    color: var(--black);
 
-    padding: 15px 22px;
+    font-size: clamp(42px, 6vw, 72px);
 
-    border: 1px solid var(--border);
-    border-radius: 9px;
+    line-height: 1.02;
 
-    color: var(--ink-soft);
-
-    font-size: 13px;
-    font-weight: 600;
-
-    transition: var(--transition);
+    letter-spacing: -.055em;
 }
 
-.social-btn svg {
-    width: 20px;
-    height: 20px;
+.philosophy p {
+    color: var(--green);
 
-    fill: currentColor;
-}
+    font-size: 12px;
+    font-weight: 700;
 
-.social-btn:hover {
-    color: var(--brand);
+    letter-spacing: .18em;
 
-    border-color: rgba(0,140,149,.35);
-
-    transform: translateY(-3px);
-
-    box-shadow: var(--shadow-sm);
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   16. CTA
+   17. CTA
    ========================================================= */
 
 .cta-section {
     position: relative;
 
-    padding: 110px 0;
+    padding: 130px 0;
 
     overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            var(--brand-dark),
-            var(--brand)
+            var(--green-dark),
+            var(--green)
         );
 
     color: white;
@@ -1252,134 +1360,149 @@ ul {
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 
-    top: -250px;
-    right: -100px;
+    top: -300px;
+    right: -150px;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,.07);
+    background: rgba(255,255,255,.06);
 }
 
-.cta-section h2,
-.cta-section p,
-.cta-section .btn {
+.cta-section .container {
     position: relative;
+
     z-index: 2;
 }
 
+.cta-section .section-kicker {
+    justify-content: center;
+}
+
 .cta-section h2 {
-    max-width: 850px;
+    max-width: 900px;
 
-    margin: 0 auto 20px;
+    margin: 25px auto 20px;
 
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
+    color: white;
+
+    font-size: clamp(42px, 5.5vw, 68px);
+
+    line-height: 1.02;
+
+    letter-spacing: -.05em;
 }
 
 .cta-section p {
     max-width: 650px;
 
-    margin: 0 auto 32px;
+    margin: 0 auto 35px;
 
-    color: rgba(255,255,255,.88);
+    color: rgba(255,255,255,.82);
+
+    font-size: 15px;
 }
 
 
 /* =========================================================
-   17. CONTACTO
+   18. CONTACT
    ========================================================= */
 
 .contact-section {
-    background: var(--surface);
+    padding: var(--section-padding) 0;
+
+    background: var(--off-white);
 }
 
-.contact-grid {
+.contact-layout {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(340px, .7fr);
+    grid-template-columns: 1fr .65fr;
 
-    gap: 90px;
+    gap: 100px;
 
     align-items: center;
 }
 
 .contact-content h2 {
-    margin-bottom: 20px;
+    max-width: 650px;
 
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1.08;
-    letter-spacing: -.035em;
+    margin: 22px 0;
+
+    color: var(--black);
+
+    font-size: clamp(42px, 5vw, 62px);
+
+    line-height: 1.02;
+
+    letter-spacing: -.05em;
 }
 
 .contact-content > p {
-    max-width: 650px;
+    max-width: 620px;
 
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 
     color: var(--muted);
+
+    font-size: 15px;
 }
 
-.contact-info {
+.contact-details {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+
+    gap: 20px;
 }
 
-.contact-item {
+.contact-detail {
     display: flex;
+
     align-items: center;
-    gap: 16px;
+
+    gap: 20px;
 }
 
-.contact-icon {
-    flex: 0 0 48px;
+.contact-number {
+    color: var(--green);
 
-    width: 48px;
-    height: 48px;
+    font-size: 11px;
+    font-weight: 800;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: white;
-    color: var(--brand);
-
-    box-shadow: var(--shadow-sm);
-
-    font-size: 17px;
+    letter-spacing: .1em;
 }
 
-.contact-item strong {
+.contact-detail strong {
     display: block;
 
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 
-    font-size: 13px;
+    color: var(--black);
+
+    font-size: 12px;
 }
 
-.contact-item span {
+.contact-detail div span,
+.contact-detail a {
     color: var(--muted);
 
     font-size: 13px;
+}
+
+.contact-detail a:hover {
+    color: var(--green);
 }
 
 .contact-card {
-    padding: 50px 40px;
+    padding: 60px 45px;
 
     background: white;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 
     text-align: center;
 }
@@ -1391,112 +1514,87 @@ ul {
 }
 
 .contact-card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
-    font-size: 24px;
+    color: var(--black);
+
+    font-size: 25px;
 }
 
 .contact-card p {
+    margin-bottom: 28px;
+
     color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   18. FOOTER
+   19. FOOTER
    ========================================================= */
 
 .footer {
     padding: 75px 0 25px;
 
-    background: #142024;
+    background: #10191d;
 
     color: white;
 }
 
-.footer-content {
+.footer-grid {
     display: grid;
 
     grid-template-columns:
         1.5fr
         repeat(3, 1fr);
 
-    gap: 55px;
+    gap: 60px;
 }
 
-.footer-content img {
+.footer-brand img {
     width: 145px;
 
     margin-bottom: 20px;
 }
 
-.footer-content p {
-    max-width: 330px;
+.footer-brand p {
+    max-width: 350px;
 
-    color: rgba(255,255,255,.58);
+    color: rgba(255,255,255,.52);
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.footer-content h3 {
+.footer-column h3 {
     margin-bottom: 18px;
 
-    font-size: 14px;
-}
-
-.footer-content a {
-    display: inline-block;
-
-    margin-bottom: 8px;
-
-    color: rgba(255,255,255,.62);
+    color: white;
 
     font-size: 13px;
+}
+
+.footer-column a {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: rgba(255,255,255,.52);
+
+    font-size: 12px;
 
     transition: var(--transition);
 }
 
-.footer-content a:hover {
+.footer-column a:hover {
     color: white;
-    transform: translateX(3px);
-}
 
-.footer-social {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-social a {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-
-    border: 1px solid rgba(255,255,255,.18);
-    border-radius: 50%;
-}
-
-.footer-social a:hover {
-    background: var(--brand);
-    border-color: var(--brand);
-
-    transform: translateY(-3px);
-}
-
-.footer-social svg {
-    width: 17px;
-    height: 17px;
-
-    fill: currentColor;
+    transform: translateX(4px);
 }
 
 .footer-bottom {
-    margin-top: 55px;
+    margin-top: 60px;
+
     padding-top: 22px;
 
     border-top: 1px solid rgba(255,255,255,.1);
@@ -1505,21 +1603,21 @@ ul {
 }
 
 .footer-bottom p {
-    max-width: none;
+    color: rgba(255,255,255,.4);
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 
 /* =========================================================
-   19. WHATSAPP
+   20. WHATSAPP
    ========================================================= */
 
 .whatsapp-float {
     position: fixed;
 
-    right: 26px;
-    bottom: 26px;
+    right: 25px;
+    bottom: 25px;
 
     z-index: 999;
 
@@ -1530,13 +1628,13 @@ ul {
     align-items: center;
     justify-content: center;
 
+    border-radius: 50%;
+
     background: #25D366;
     color: white;
 
-    border-radius: 50%;
-
     box-shadow:
-        0 10px 30px rgba(0,0,0,.2);
+        0 12px 30px rgba(0,0,0,.22);
 
     transition: var(--transition);
 }
@@ -1554,44 +1652,13 @@ ul {
 
 
 /* =========================================================
-   20. ACCESSIBILITY
+   21. FOCUS
    ========================================================= */
 
 :focus-visible {
     outline: 3px solid rgba(0,140,149,.35);
+
     outline-offset: 4px;
-}
-
-
-/* =========================================================
-   21. LARGE TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    :root {
-        --section-space: 100px;
-    }
-
-    .main-nav ul {
-        gap: 20px;
-    }
-
-    .main-nav a {
-        font-size: 12px;
-    }
-
-    .about-grid,
-    .sas-grid,
-    .corporate-grid,
-    .training-grid,
-    .contact-grid {
-        gap: 55px;
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 
@@ -1599,87 +1666,63 @@ ul {
    22. TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .main-nav ul {
-        gap: 14px;
+        gap: 20px;
     }
 
-    .services-grid,
-    .uafe-grid,
-    .platforms-grid,
-    .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .main-nav a {
+        font-size: 11px;
     }
 
-    .about-grid,
-    .sas-grid,
-    .corporate-grid,
-    .training-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .intro-layout {
+        grid-template-columns: 150px 1fr;
+
+        gap: 55px;
     }
 
-    .about-box {
-        max-width: 700px;
+    .service-info {
+        padding: 50px;
     }
 
-    .sas-image,
-    .corporate-image,
-    .training-image {
-        height: 460px;
+    .digital-header,
+    .digital-main {
+        gap: 50px;
     }
 
-    .contact-card {
-        max-width: 600px;
-        margin-inline: auto;
+    .contact-layout {
+        gap: 55px;
     }
+
 }
 
 
 /* =========================================================
-   23. MOBILE NAVIGATION
+   23. TABLET
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 
     :root {
-        --section-space: 78px;
-    }
-
-    .container {
-        width: min(92%, var(--container));
-    }
-
-    .nav-container {
-        min-height: 74px;
-    }
-
-    .logo {
-        width: 132px;
-    }
-
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        --section-padding: 90px;
     }
 
     .main-nav {
+        display: none;
+
         position: absolute;
 
-        top: 74px;
+        top: 82px;
         left: 0;
 
         width: 100%;
 
-        display: none;
-
         background: white;
 
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--line);
 
-        box-shadow: 0 15px 30px rgba(0,0,0,.08);
+        box-shadow: 0 20px 35px rgba(0,0,0,.08);
     }
 
     .main-nav.active {
@@ -1687,8 +1730,8 @@ ul {
     }
 
     .main-nav ul {
-        display: flex;
         flex-direction: column;
+
         align-items: stretch;
 
         gap: 0;
@@ -1696,176 +1739,315 @@ ul {
         padding: 12px 0;
     }
 
-    .main-nav li {
-        width: 100%;
-    }
-
     .main-nav a {
-        display: block;
+        padding: 15px 25px;
 
-        padding: 14px 25px;
-
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .main-nav a::after {
         display: none;
     }
 
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 720px;
+
+        margin-top: 82px;
+    }
+
+    .intro-layout {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .intro-label {
+        display: flex;
+
+        gap: 15px;
+
+        align-items: center;
+    }
+
+    .intro-label span,
+    .intro-label p {
+        margin: 0;
+    }
+
+    .service-feature,
+    .service-feature.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .service-feature.reverse .service-image {
+        order: 1;
+    }
+
+    .service-feature.reverse .service-info {
+        order: 2;
+    }
+
+    .service-image {
+        min-height: 420px;
+    }
+
+    .project-section,
+    .uafe-section,
+    .corporate-section {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image,
+    .uafe-image,
+    .corporate-image {
+        min-height: 450px;
+    }
+
+    .digital-header {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .digital-main {
+        grid-template-columns: 1fr;
+    }
+
+    .digital-image {
+        min-height: 400px;
+    }
+
+    .solution-stack {
+        grid-template-columns: 1fr;
+    }
+
+    .sas-layout,
+    .training-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .sas-image,
+    .training-image {
+        height: 430px;
+    }
+
+    .contact-card {
+        max-width: 550px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   24. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --section-padding: 72px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .nav-container {
+        min-height: 72px;
+    }
+
+    .logo {
+        width: 130px;
+    }
+
+    .main-nav {
+        top: 72px;
+    }
+
     .hero {
         min-height: 680px;
-        margin-top: 74px;
 
-        background-position: 60% center;
+        margin-top: 72px;
+
+        background-position: 62% center;
     }
 
     .hero-overlay {
         background:
             linear-gradient(
                 90deg,
-                rgba(7,24,28,.88),
-                rgba(7,24,28,.60)
+                rgba(8,25,29,.9),
+                rgba(8,25,29,.62)
             );
     }
 
     .hero h1 {
-        font-size: clamp(42px, 11vw, 58px);
+        font-size: 43px;
     }
 
     .hero p {
-        font-size: 16px;
-    }
-
-    .section-header {
-        margin-bottom: 45px;
-    }
-
-    .section-header h2 {
-        font-size: 35px;
-    }
-
-    .services-grid,
-    .uafe-grid,
-    .platforms-grid,
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-image {
-        height: 230px;
-    }
-
-    .sas-image,
-    .corporate-image,
-    .training-image {
-        height: 390px;
-    }
-
-    .sas-advantages ul {
-        grid-template-columns: 1fr;
-    }
-
-    .social-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .social-btn {
-        min-width: 0;
-        width: 100%;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/* =========================================================
-   24. SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-    :root {
-        --section-space: 65px;
-    }
-
-    .hero {
-        min-height: 650px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-    }
-
-    .hero-tag {
-        font-size: 9px;
-        letter-spacing: .14em;
+        font-size: 15px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: stretch;
     }
 
-    .btn {
+    .hero-buttons .btn {
         width: 100%;
     }
 
-    .about-box {
-        padding: 35px 28px;
+    .hero-scroll {
+        display: none;
     }
 
-    .about-number {
-        font-size: 45px;
+    .section-intro h2,
+    .intro-content h2 {
+        font-size: 40px;
     }
 
-    .service-content {
-        padding: 26px;
+    .service-info {
+        padding: 38px 28px;
+    }
+
+    .service-info h3 {
+        font-size: 36px;
+    }
+
+    .service-image {
+        min-height: 300px;
+    }
+
+    .project-content,
+    .uafe-content,
+    .corporate-content {
+        padding: 75px 8%;
+    }
+
+    .project-content h2,
+    .uafe-content h2,
+    .corporate-content h2 {
+        font-size: 40px;
+    }
+
+    .project-image,
+    .uafe-image,
+    .corporate-image {
+        min-height: 340px;
+    }
+
+    .digital-image {
+        min-height: 300px;
+    }
+
+    .digital-copy {
+        padding: 40px 28px;
+    }
+
+    .solution-card-image {
+        height: 230px;
     }
 
     .sas-image,
-    .corporate-image,
     .training-image {
-        height: 300px;
+        height: 320px;
     }
 
-    .social-buttons {
-        grid-template-columns: 1fr;
+    .philosophy-section {
+        padding: 100px 0;
+    }
+
+    .philosophy h2 {
+        font-size: 42px;
+    }
+
+    .cta-section {
+        padding: 95px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 42px;
+    }
+
+    .contact-content h2 {
+        font-size: 43px;
     }
 
     .contact-card {
-        padding: 38px 25px;
+        padding: 45px 28px;
     }
 
-    .footer-content {
+    .footer-grid {
         grid-template-columns: 1fr;
+
         gap: 35px;
     }
 
     .whatsapp-float {
-        width: 54px;
-        height: 54px;
+        width: 55px;
+        height: 55px;
 
         right: 18px;
         bottom: 18px;
     }
+
 }
 
 
 /* =========================================================
-   25. REDUCED MOTION
+   25. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .section-intro h2,
+    .intro-content h2 {
+        font-size: 35px;
+    }
+
+    .service-info h3,
+    .project-content h2,
+    .uafe-content h2,
+    .corporate-content h2,
+    .cta-section h2 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   26. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
+    html {
+        scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
+
 }
 ```
