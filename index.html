@@ -3,47 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="HUMAN – Estrategias Empresariales. Servicios contables, tributarios, administrativos y empresariales para empresas en Ecuador.">
-
-    <meta name="keywords"
-        content="contabilidad Ecuador, asesoría tributaria Ecuador, servicios contables, asesoría empresarial, constitución de empresas, gestión administrativa">
-
-    <meta name="author" content="HUMAN – Estrategias Empresariales">
-
-    <meta name="robots" content="index, follow">
 
     <title>HUMAN | Estrategias Empresariales en Ecuador</title>
 
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="HUMAN – Estrategias Empresariales. Gestión administrativa, contable, tributaria, laboral, empresarial, proyectos, servicios digitales, cumplimiento UAFE y asesoría empresarial en Ecuador.">
 
+    <meta name="keywords"
+        content="HUMAN Estrategias Empresariales, contabilidad Ecuador, asesoría empresarial Ecuador, gestión tributaria, gestión laboral, UAFE, proyectos, SRI, SERCOP, SUPERCIAS, IESS">
+
+    <meta name="author" content="HUMAN – Estrategias Empresariales">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://humancontable.github.io/">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="icon" href="images/logo.png">
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ============================= -->
-    <!-- HEADER -->
-    <!-- ============================= -->
+    <!-- ================= HEADER ================= -->
 
     <header class="header" id="header">
 
         <div class="container nav-container">
 
             <a href="#inicio" class="logo">
-                HUMAN
-                <span>Estrategias Empresariales</span>
+
+                <span class="logo-main">HUMAN</span>
+                <span class="logo-sub">ESTRATEGIAS EMPRESARIALES</span>
+
             </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
             <nav class="nav" id="nav">
 
@@ -53,24 +60,20 @@
                 <a href="#proceso">Cómo trabajamos</a>
                 <a href="#contacto">Contacto</a>
 
+                <a href="https://wa.me/593982856207"
+                    class="nav-button"
+                    target="_blank">
+                    Solicitar asesoría
+                </a>
+
             </nav>
-
-            <a href="#contacto" class="nav-button">
-                Solicitar asesoría
-            </a>
-
-            <button class="menu-button" id="menuButton" aria-label="Abrir menú">
-                ☰
-            </button>
 
         </div>
 
     </header>
 
 
-    <!-- ============================= -->
-    <!-- HERO -->
-    <!-- ============================= -->
+    <!-- ================= HERO ================= -->
 
     <main>
 
@@ -87,25 +90,27 @@
                     </span>
 
                     <h1>
-                        Tu empresa necesita
-                        <span>más que números.</span>
+                        Impulsamos el crecimiento
+                        <span>de tu empresa.</span>
                     </h1>
 
                     <p>
-                        En HUMAN integramos contabilidad, tributación,
-                        administración y estrategia para ayudarte a tomar
-                        mejores decisiones y hacer crecer tu empresa.
+                        Soluciones profesionales, estratégicas y humanas
+                        para optimizar tu gestión, cumplir con las normativas
+                        y llevar tu negocio al siguiente nivel.
                     </p>
 
                     <div class="hero-buttons">
 
-                        <a href="#contacto" class="button button-primary">
-                            Solicitar asesoría
-                            <span>→</span>
+                        <a href="#servicios" class="btn btn-primary">
+                            Conoce nuestros servicios
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
 
-                        <a href="#servicios" class="button button-outline">
-                            Ver servicios
+                        <a href="https://wa.me/593982856207"
+                            target="_blank"
+                            class="btn btn-outline">
+                            Hablar con un asesor
                         </a>
 
                     </div>
@@ -116,26 +121,26 @@
 
             <div class="hero-bottom">
 
-                <div class="container hero-bottom-content">
+                <div class="container hero-pillars">
 
-                    <div>
-                        <strong>Contabilidad</strong>
-                        <span>Información para decidir</span>
+                    <div class="pillar">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span>Gestión</span>
                     </div>
 
-                    <div>
-                        <strong>Tributación</strong>
-                        <span>Cumplimiento y prevención</span>
+                    <div class="pillar">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <span>Contabilidad</span>
                     </div>
 
-                    <div>
-                        <strong>Gestión</strong>
-                        <span>Orden y eficiencia</span>
+                    <div class="pillar">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Cumplimiento</span>
                     </div>
 
-                    <div>
-                        <strong>Estrategia</strong>
-                        <span>Visión empresarial</span>
+                    <div class="pillar">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Estrategia</span>
                     </div>
 
                 </div>
@@ -145,9 +150,7 @@
         </section>
 
 
-        <!-- ============================= -->
-        <!-- INTRO -->
-        <!-- ============================= -->
+        <!-- ================= INTRO ================= -->
 
         <section class="intro section">
 
@@ -160,8 +163,8 @@
                     </span>
 
                     <h2>
-                        Convertimos la información de tu empresa en
-                        <span>decisiones inteligentes.</span>
+                        Más que servicios,
+                        <strong>soluciones para tu empresa.</strong>
                     </h2>
 
                 </div>
@@ -169,20 +172,16 @@
                 <div class="intro-text">
 
                     <p>
-                        Una empresa saludable necesita información clara,
-                        cumplimiento oportuno y una gestión organizada.
+                        En HUMAN creemos que detrás de cada empresa exitosa
+                        hay una estrategia clara, una gestión eficiente y
+                        personas comprometidas.
                     </p>
 
                     <p>
-                        HUMAN acompaña a empresarios y organizaciones
-                        mediante soluciones contables, tributarias,
-                        administrativas y empresariales diseñadas de
-                        acuerdo con sus necesidades.
+                        Por eso integramos gestión, cumplimiento, tecnología
+                        y estrategia para ayudarte a tomar mejores decisiones
+                        y construir un negocio sostenible.
                     </p>
-
-                    <a href="#nosotros" class="text-link">
-                        Conoce HUMAN →
-                    </a>
 
                 </div>
 
@@ -191,9 +190,7 @@
         </section>
 
 
-        <!-- ============================= -->
-        <!-- SERVICIOS -->
-        <!-- ============================= -->
+        <!-- ================= SERVICIOS ================= -->
 
         <section class="services section" id="servicios">
 
@@ -208,16 +205,15 @@
                         </span>
 
                         <h2>
-                            Soluciones para cada etapa
-                            de tu empresa.
+                            Soluciones integrales para
+                            <strong>tu organización.</strong>
                         </h2>
 
                     </div>
 
                     <p>
-                        Desde la organización contable hasta la gestión
-                        empresarial, ponemos nuestra experiencia al
-                        servicio de tu negocio.
+                        Acompañamos a empresas y emprendedores en las
+                        diferentes etapas de su desarrollo.
                     </p>
 
                 </div>
@@ -226,213 +222,375 @@
                 <div class="services-grid">
 
 
-                    <!-- SERVICIO 1 -->
+                    <!-- ADMINISTRATIVA -->
 
                     <article class="service-card">
 
-                        <div class="service-image">
-                            <img src="images/gestion-contable.jpg"
-                                alt="Gestión contable empresarial">
+                        <div class="service-number">01</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
                         </div>
 
-                        <div class="service-content">
+                        <h3>Gestión Administrativa</h3>
 
-                            <span>01</span>
+                        <p>
+                            Organizamos y optimizamos los procesos
+                            administrativos para mejorar el funcionamiento
+                            de tu empresa.
+                        </p>
 
-                            <h3>
-                                Gestión Contable
-                            </h3>
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
 
-                            <p>
-                                Organización y control de la información
-                                financiera para conocer realmente la
-                                situación de tu empresa.
-                            </p>
+                    </article>
 
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
+
+                    <!-- CONTABLE -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">02</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <h3>Gestión Contable</h3>
+
+                        <p>
+                            Información financiera confiable para controlar
+                            tus operaciones y tomar mejores decisiones.
+                        </p>
+
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- TRIBUTARIA -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">03</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+
+                        <h3>Gestión Tributaria</h3>
+
+                        <p>
+                            Apoyo para el cumplimiento de obligaciones
+                            tributarias y correcta gestión ante el SRI.
+                        </p>
+
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- LABORAL -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">04</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <h3>Gestión Laboral</h3>
+
+                        <p>
+                            Gestión relacionada con el Ministerio del Trabajo
+                            y el Instituto Ecuatoriano de Seguridad Social.
+                        </p>
+
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- EMPRESARIAL -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">05</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <h3>Gestión Empresarial</h3>
+
+                        <p>
+                            Acompañamiento estratégico para fortalecer
+                            la estructura y crecimiento de tu negocio.
+                        </p>
+
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROYECTOS -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">06</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+
+                        <h3>Gestión de Proyectos</h3>
+
+                        <p>
+                            Planificación, organización y seguimiento de
+                            proyectos para convertir ideas en resultados.
+                        </p>
+
+                        <a href="#contacto">
+                            Conocer más
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- DIGITAL -->
+
+                    <article class="service-card featured">
+
+                        <div class="service-number">07</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <h3>
+                            Servicios Digitales y
+                            Plataformas Gubernamentales
+                        </h3>
+
+                        <p>
+                            Manejo y acompañamiento en plataformas
+                            gubernamentales y servicios digitales.
+                        </p>
+
+                        <div class="service-list">
+
+                            <span>SRI</span>
+                            <span>SERCOP</span>
+                            <span>SUPERCIAS</span>
+                            <span>IESS</span>
+                            <span>SUT-MDT</span>
 
                         </div>
 
                     </article>
 
 
-                    <!-- SERVICIO 2 -->
+                    <!-- UAFE -->
 
-                    <article class="service-card">
+                    <article class="service-card featured">
 
-                        <div class="service-image">
-                            <img src="images/gestion-tributaria.jpg"
-                                alt="Gestión tributaria en Ecuador">
+                        <div class="service-number">08</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
                         </div>
 
-                        <div class="service-content">
+                        <h3>
+                            Cumplimiento y Normativa –
+                            UAFE
+                        </h3>
 
-                            <span>02</span>
+                        <p>
+                            Soluciones de cumplimiento para sujetos
+                            obligados y gestión de prevención LA/FT.
+                        </p>
 
-                            <h3>
-                                Gestión Tributaria
-                            </h3>
+                        <div class="service-list">
 
-                            <p>
-                                Cumplimiento de obligaciones tributarias,
-                                declaraciones y planificación para reducir
-                                riesgos.
-                            </p>
-
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICIO 3 -->
-
-                    <article class="service-card">
-
-                        <div class="service-image">
-                            <img src="images/gestion-administrativa.jpg"
-                                alt="Gestión administrativa empresarial">
-                        </div>
-
-                        <div class="service-content">
-
-                            <span>03</span>
-
-                            <h3>
-                                Gestión Administrativa
-                            </h3>
-
-                            <p>
-                                Organización de procesos y herramientas
-                                para mejorar el funcionamiento de tu
-                                empresa.
-                            </p>
-
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
+                            <span>Oficial de Cumplimiento</span>
+                            <span>Manual LA/FT</span>
+                            <span>Matriz de riesgos</span>
+                            <span>Reportes UAFE</span>
 
                         </div>
 
                     </article>
 
 
-                    <!-- SERVICIO 4 -->
+                    <!-- CAPACITACIÓN -->
 
                     <article class="service-card">
 
-                        <div class="service-image">
-                            <img src="images/gestion-laboral.jpg"
-                                alt="Gestión laboral empresarial">
+                        <div class="service-number">09</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
                         </div>
 
-                        <div class="service-content">
+                        <h3>
+                            Capacitación y Asesoría
+                        </h3>
 
-                            <span>04</span>
+                        <p>
+                            Capacitación y asesoramiento para fortalecer
+                            las capacidades de tu equipo y organización.
+                        </p>
 
-                            <h3>
-                                Gestión Laboral
-                            </h3>
-
-                            <p>
-                                Apoyo en procesos laborales, nómina y
-                                cumplimiento de obligaciones relacionadas
-                                con tus colaboradores.
-                            </p>
-
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICIO 5 -->
-
-                    <article class="service-card">
-
-                        <div class="service-image">
-                            <img src="images/constitucion-sas.jpeg"
-                                alt="Constitución de empresas">
-                        </div>
-
-                        <div class="service-content">
-
-                            <span>05</span>
-
-                            <h3>
-                                Constitución de Empresas
-                            </h3>
-
-                            <p>
-                                Te acompañamos en la creación y organización
-                                inicial de tu empresa.
-                            </p>
-
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICIO 6 -->
-
-                    <article class="service-card">
-
-                        <div class="service-image">
-                            <img src="images/gestion-empresarial.jpeg"
-                                alt="Asesoría empresarial">
-                        </div>
-
-                        <div class="service-content">
-
-                            <span>06</span>
-
-                            <h3>
-                                Asesoría Empresarial
-                            </h3>
-
-                            <p>
-                                Análisis y acompañamiento para tomar
-                                decisiones que fortalezcan tu negocio.
-                            </p>
-
-                            <a href="#contacto">
-                                Conocer servicio →
-                            </a>
-
-                        </div>
+                        <a href="#contacto">
+                            Solicitar información
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
 
                     </article>
 
                 </div>
 
+            </div>
 
-                <div class="more-services">
+        </section>
+
+
+        <!-- ================= SERVICIOS CORPORATIVOS ================= -->
+
+        <section class="corporate section">
+
+            <div class="container corporate-grid">
+
+                <div class="corporate-image">
+
+                    <img src="gestion-empresarial.jpeg"
+                        alt="Servicios corporativos HUMAN">
+
+                </div>
+
+                <div class="corporate-content">
+
+                    <span class="section-label">
+                        SERVICIOS CORPORATIVOS
+                    </span>
+
+                    <h2>
+                        Fortalecemos la estructura
+                        <strong>de tu organización.</strong>
+                    </h2>
 
                     <p>
-                        También ofrecemos soluciones en:
+                        Diseñamos soluciones orientadas al crecimiento,
+                        formalización y fortalecimiento empresarial.
                     </p>
 
-                    <div class="service-tags">
+                    <ul>
 
-                        <span>Facturación electrónica</span>
-                        <span>Firma electrónica</span>
-                        <span>Proyectos</span>
-                        <span>Servicios corporativos</span>
-                        <span>Servicios digitales</span>
-                        <span>Cumplimiento UAFE</span>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Constitución de S.A.S.
+                        </li>
 
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Registro de Marca
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Planificación Estratégica
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Gestión de Proyectos
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Desarrollo Empresarial
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Consultoría de Negocios
+                        </li>
+
+                    </ul>
+
+                    <a href="#contacto" class="btn btn-dark">
+                        Hablemos de tu empresa
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOLUCIONES DIGITALES ================= -->
+
+        <section class="digital section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">
+                        SOLUCIONES DIGITALES
+                    </span>
+
+                    <h2>
+                        Simplificamos tus
+                        <strong>gestiones empresariales.</strong>
+                    </h2>
+
+                    <p>
+                        También te ayudamos con herramientas y servicios
+                        digitales necesarios para operar tu empresa.
+                    </p>
+
+                </div>
+
+
+                <div class="digital-grid">
+
+                    <div class="digital-item">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <h3>Facturación Electrónica</h3>
+                    </div>
+
+                    <div class="digital-item">
+                        <i class="fa-solid fa-signature"></i>
+                        <h3>Firmas Electrónicas</h3>
+                    </div>
+
+                    <div class="digital-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Sistema Contable</h3>
+                    </div>
+
+                    <div class="digital-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Plataformas Gubernamentales</h3>
                     </div>
 
                 </div>
@@ -442,37 +600,95 @@
         </section>
 
 
-        <!-- ============================= -->
-        <!-- BANNER -->
-        <!-- ============================= -->
+        <!-- ================= UAFE ================= -->
 
-        <section class="banner">
+        <section class="uafe section">
 
-            <div class="banner-image"></div>
+            <div class="container uafe-grid">
 
-            <div class="container banner-content">
+                <div class="uafe-content">
 
-                <span class="section-label">
-                    UNA VISIÓN DIFERENTE
-                </span>
+                    <span class="section-label">
+                        CUMPLIMIENTO Y NORMATIVA
+                    </span>
 
-                <h2>
-                    No solo llevamos tus cuentas.
-                    <strong>Entendemos tu negocio.</strong>
-                </h2>
+                    <h2>
+                        Cumple con tus
+                        <strong>obligaciones UAFE.</strong>
+                    </h2>
 
-                <a href="#contacto" class="button button-light">
-                    Hablemos de tu empresa →
-                </a>
+                    <p>
+                        Acompañamos a sujetos obligados en la implementación
+                        y gestión de sus procesos de prevención de lavado
+                        de activos y financiamiento del terrorismo.
+                    </p>
+
+                    <div class="uafe-list">
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Oficial de Cumplimiento externo
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Informe Anual de Oficial de Cumplimiento
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Plan Anual de Actividades y Cumplimiento
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Manuales de Prevención LA/FT
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Matriz de riesgos
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Reportes ROII, RESU, NO RESU y RIA
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Capacitación UAFE
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="uafe-box">
+
+                    <i class="fa-solid fa-scale-balanced"></i>
+
+                    <span>HUMAN</span>
+
+                    <h3>
+                        Gestión responsable.
+                        Cumplimiento estratégico.
+                    </h3>
+
+                    <a href="https://wa.me/593982856207"
+                        target="_blank"
+                        class="btn btn-primary">
+                        Solicitar asesoría
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ============================= -->
-        <!-- NOSOTROS -->
-        <!-- ============================= -->
+        <!-- ================= NOSOTROS ================= -->
 
         <section class="about section" id="nosotros">
 
@@ -480,10 +696,21 @@
 
                 <div class="about-image">
 
-                    <img src="images/hero-human.jpg"
+                    <img src="hero-human.jpg"
                         alt="HUMAN Estrategias Empresariales">
 
+                    <div class="about-badge">
+
+                        <strong>HUMAN</strong>
+
+                        <span>
+                            Estrategias Empresariales
+                        </span>
+
+                    </div>
+
                 </div>
+
 
                 <div class="about-content">
 
@@ -492,38 +719,46 @@
                     </span>
 
                     <h2>
-                        Personas, información
-                        <span>y estrategia.</span>
+                        Estrategia clara.
+                        <strong>Gestión eficiente.</strong>
                     </h2>
 
                     <p>
-                        HUMAN nace con una visión diferente de los servicios
-                        empresariales: acompañar a las organizaciones con
-                        soluciones que combinen conocimiento técnico,
-                        análisis y una visión práctica del negocio.
+                        HUMAN nace con una visión integral de la empresa:
+                        entendemos que la gestión administrativa, contable,
+                        tributaria y empresarial deben trabajar juntas.
                     </p>
 
                     <p>
-                        Nuestro objetivo es que empresarios y organizaciones
-                        tengan información confiable para cumplir, organizarse
-                        y tomar decisiones con mayor seguridad.
+                        Nuestro propósito es acompañar a nuestros clientes
+                        con soluciones profesionales que les permitan
+                        concentrarse en hacer crecer sus negocios.
                     </p>
 
                     <div class="about-values">
 
                         <div>
-                            <strong>01</strong>
-                            <span>Confianza</span>
+                            <i class="fa-solid fa-bullseye"></i>
+                            <strong>Enfoque estratégico</strong>
+                            <span>
+                                Soluciones alineadas a tus objetivos.
+                            </span>
                         </div>
 
                         <div>
-                            <strong>02</strong>
-                            <span>Información</span>
+                            <i class="fa-solid fa-handshake"></i>
+                            <strong>Acompañamiento</strong>
+                            <span>
+                                Estamos contigo en cada etapa.
+                            </span>
                         </div>
 
                         <div>
-                            <strong>03</strong>
-                            <span>Estrategia</span>
+                            <i class="fa-solid fa-user-tie"></i>
+                            <strong>Profesionalismo</strong>
+                            <span>
+                                Gestión responsable y confiable.
+                            </span>
                         </div>
 
                     </div>
@@ -535,9 +770,7 @@
         </section>
 
 
-        <!-- ============================= -->
-        <!-- PROCESO -->
-        <!-- ============================= -->
+        <!-- ================= PROCESO ================= -->
 
         <section class="process section" id="proceso">
 
@@ -550,14 +783,9 @@
                     </span>
 
                     <h2>
-                        Simple, claro y enfocado
-                        en resultados.
+                        De la necesidad
+                        <strong>a la solución.</strong>
                     </h2>
-
-                    <p>
-                        Nuestro trabajo parte de entender tu realidad
-                        empresarial antes de proponer soluciones.
-                    </p>
 
                 </div>
 
@@ -566,17 +794,15 @@
 
                     <div class="process-item">
 
-                        <div class="process-number">
-                            01
-                        </div>
+                        <span>01</span>
 
-                        <h3>
-                            Conocemos
-                        </h3>
+                        <i class="fa-solid fa-comments"></i>
+
+                        <h3>Conocemos</h3>
 
                         <p>
-                            Entendemos tu empresa, necesidades,
-                            problemas y objetivos.
+                            Escuchamos tus necesidades y entendemos
+                            la realidad de tu empresa.
                         </p>
 
                     </div>
@@ -584,17 +810,15 @@
 
                     <div class="process-item">
 
-                        <div class="process-number">
-                            02
-                        </div>
+                        <span>02</span>
 
-                        <h3>
-                            Analizamos
-                        </h3>
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                        <h3>Analizamos</h3>
 
                         <p>
-                            Revisamos la información y determinamos
-                            oportunidades de mejora.
+                            Identificamos oportunidades, riesgos y
+                            necesidades de mejora.
                         </p>
 
                     </div>
@@ -602,17 +826,15 @@
 
                     <div class="process-item">
 
-                        <div class="process-number">
-                            03
-                        </div>
+                        <span>03</span>
 
-                        <h3>
-                            Proponemos
-                        </h3>
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <h3>Proponemos</h3>
 
                         <p>
-                            Diseñamos soluciones prácticas de acuerdo
-                            con las necesidades de tu organización.
+                            Diseñamos una solución práctica y
+                            adaptada a tus objetivos.
                         </p>
 
                     </div>
@@ -620,17 +842,15 @@
 
                     <div class="process-item">
 
-                        <div class="process-number">
-                            04
-                        </div>
+                        <span>04</span>
 
-                        <h3>
-                            Acompañamos
-                        </h3>
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <h3>Acompañamos</h3>
 
                         <p>
-                            Te acompañamos durante la implementación
-                            y seguimiento.
+                            Te acompañamos para convertir la estrategia
+                            en resultados.
                         </p>
 
                     </div>
@@ -642,44 +862,41 @@
         </section>
 
 
-        <!-- ============================= -->
-        <!-- CTA -->
-        <!-- ============================= -->
+        <!-- ================= CTA ================= -->
 
         <section class="cta" id="contacto">
 
             <div class="container cta-content">
 
-                <div>
+                <span class="section-label">
+                    HABLEMOS
+                </span>
 
-                    <span class="section-label">
-                        HABLEMOS
-                    </span>
+                <h2>
+                    ¿Listo para llevar
+                    <strong>tu empresa al siguiente nivel?</strong>
+                </h2>
 
-                    <h2>
-                        ¿Listo para llevar
-                        tu empresa al siguiente nivel?
-                    </h2>
-
-                    <p>
-                        Cuéntanos qué necesitas y encontremos juntos
-                        la mejor solución para tu empresa.
-                    </p>
-
-                </div>
+                <p>
+                    Cuéntanos qué necesitas y encontremos juntos
+                    la mejor solución para tu empresa.
+                </p>
 
                 <div class="cta-buttons">
 
-                    <a href="https://wa.me/593000000000"
+                    <a href="https://wa.me/593982856207"
                         target="_blank"
-                        rel="noopener"
-                        class="button button-whatsapp">
+                        class="btn btn-whatsapp">
 
-                        WhatsApp →
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        WhatsApp
                     </a>
 
-                    <a href="mailto:info@human.com"
-                        class="button button-outline-light">
+                    <a href="mailto:human.contable@gmail.com"
+                        class="btn btn-light">
+
+                        <i class="fa-solid fa-envelope"></i>
 
                         Enviar correo
 
@@ -694,72 +911,78 @@
     </main>
 
 
-    <!-- ============================= -->
-    <!-- FOOTER -->
-    <!-- ============================= -->
+    <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
 
         <div class="container footer-grid">
 
-            <div>
+            <div class="footer-brand">
 
-                <div class="footer-logo">
-                    HUMAN
+                <div class="logo-footer">
+
+                    <span>HUMAN</span>
+
+                    <small>
+                        ESTRATEGIAS EMPRESARIALES
+                    </small>
+
                 </div>
 
                 <p>
-                    Estrategias Empresariales
-                </p>
-
-                <p class="footer-description">
-                    Soluciones contables, tributarias,
-                    administrativas y empresariales.
+                    Soluciones profesionales, estratégicas y humanas
+                    para el crecimiento de tu empresa.
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="footer-column">
 
-                <h4>
-                    Navegación
-                </h4>
+                <h3>Servicios</h3>
 
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Servicios
-                </h4>
-
-                <a href="#servicios">Contabilidad</a>
-                <a href="#servicios">Tributación</a>
-                <a href="#servicios">Administración</a>
-                <a href="#servicios">Asesoría empresarial</a>
+                <a href="#servicios">Gestión Administrativa</a>
+                <a href="#servicios">Gestión Contable</a>
+                <a href="#servicios">Gestión Tributaria</a>
+                <a href="#servicios">Gestión Laboral</a>
+                <a href="#servicios">Gestión Empresarial</a>
 
             </div>
 
 
-            <div>
+            <div class="footer-column">
 
-                <h4>
-                    Contacto
-                </h4>
+                <h3>Especialidades</h3>
 
-                <p>
-                    Ecuador
-                </p>
+                <a href="#servicios">Gestión de Proyectos</a>
+                <a href="#servicios">Servicios Digitales</a>
+                <a href="#servicios">Cumplimiento UAFE</a>
+                <a href="#servicios">Capacitación</a>
+                <a href="#servicios">Servicios Corporativos</a>
 
-                <a href="mailto:info@human.com">
-                    info@human.com
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contacto</h3>
+
+                <a href="tel:+593982856207">
+                    <i class="fa-solid fa-phone"></i>
+                    098 285 6207
+                </a>
+
+                <a href="mailto:human.contable@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    human.contable@gmail.com
+                </a>
+
+                <a href="https://wa.me/593982856207"
+                    target="_blank">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
                 </a>
 
             </div>
@@ -767,20 +990,33 @@
         </div>
 
 
-        <div class="container footer-bottom">
+        <div class="footer-bottom">
 
-            <p>
-                © <span id="year"></span> HUMAN – Estrategias Empresariales.
-                Todos los derechos reservados.
-            </p>
+            <div class="container">
 
-            <p>
-                Ecuador
-            </p>
+                <p>
+                    © <span id="year"></span>
+                    HUMAN – Estrategias Empresariales.
+                    Todos los derechos reservados.
+                </p>
+
+            </div>
 
         </div>
 
     </footer>
+
+
+    <!-- ================= WHATSAPP FLOAT ================= -->
+
+    <a href="https://wa.me/593982856207"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Contactar por WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
 
 
     <script src="script.js"></script>
